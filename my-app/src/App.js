@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import About from "./components/About/About";
 import Home from "./components/Home/Home";
+import Projects from "./components/Projects/Projects";
 import './App.css';
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -33,6 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/project" element={<Projects />} />
       </Routes>
       <Footer />
       </div>
