@@ -2,9 +2,6 @@
   Portfolio Website<br/>
   <a href="https://main-portfolio-11tay1xo6-dongyunkim96s-projects.vercel.app/">Dongyun Kim</a>
 </h2>
-<div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
-</div>
 
 <br/>
 
