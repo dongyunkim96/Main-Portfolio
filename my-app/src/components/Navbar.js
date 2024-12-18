@@ -12,6 +12,7 @@ import {
     AiOutlineFundProjectionScreen,
     AiOutlineUser,
 } from "react-icons/ai";
+import Dongyun from ".././Assets/MainLogo.png";
 
 function NavBar() {
     const [expand, updateExpanded] = useState(false);
@@ -36,7 +37,7 @@ function NavBar() {
         >
             <Container>
                 <Navbar.Brand href="/" className="d-flex">
-                    <img src={""} className="img-fluid logo" alt="brand" />
+                    <img src={Dongyun} className="img-fluid logo" alt="brand" />
                 </Navbar.Brand>
                 <Navbar.Toggle
                   aria-controls="resposive-navbar-nav"
