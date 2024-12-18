@@ -61,7 +61,7 @@ function Projects() {
                           title="Css Practice"
                           description="This project is a custom-built website designed to practice and refine my CSS skills. The site features visually appealing layouts, responsive designs, and creative UI components, showcasing a variety of CSS techniques and design concepts."
                           ghLink="https://github.com/dongyunkim96/CSS-Experience"
-                          demoLink="https://dongyunkim96.github.io/CSS-EXperience/"
+                          demoLink="https://dongyunkim96.github.io/CSS-Experience/"
                         />
                     </Col>
 
