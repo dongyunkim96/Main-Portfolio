@@ -9,7 +9,7 @@ function AboutCard() {
                 <blockquote className="blockquote mb-0">
                     <p style={{ textAlign: "justify" }}>
                         Hi Everyone, I am <span className="purple">Dongyun Kim</span>
-                        from &nbsp;<span className="purple"> Virginia, U.S.</span>
+                        &nbsp;from <span className="purple"> Virginia, U.S.</span>
                         <br />
                         Innovative Front-End Developer known for high productivity and efficient-task completion
                         Possess specialized skills listed below, enabling the creation of visually appealing and user-friendly websites.
