@@ -4,52 +4,61 @@ import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
+
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/esm/Page/TextLayer.css";
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function Resume() {
-    const [width, setWidth] = useState(1200);
+  const [width, setWidth] = useState(window.innerWidth);
 
-    useEffect(() => {
-        setWidth(window.innerWidth);
-    }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
 
-    return (
-        <div>
-            <Container fluid className="resume-section">
-                <Particle />
-                <Row style={{ justifyContent: "center", position: "relative" }}>
-                    <Button
-                      variant="primary"
-                      href=""
-                      target="_blank"
-                      style={{ maxWidth: "250px"}}
-                    >
-                        <AiOutlineDownload />
-                        &nbsp;Download CV
-                    </Button>
-                </Row>
+    window.addEventListener("resize", handleResize);
 
-                <Row className="resume">
-                    <Document file={" "} className="d-flex justify-content-center">
-                        <Page pageNumber={1} scale={width > 768 ? 1.7 : 0.6} />
-                    </Document>
-                </Row>
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
-                <Row style={{ justifyContent: "center", position: "relative" }}>
-                    <Button
-                      variant="primary"
-                      href=""
-                      target="_blank"
-                      style={{ maxWidth: "250px" }}
-                    >
-                        <AiOutlineDownload />
-                        &nbsp;Download CV
-                    </Button>
-                </Row>
-            </Container>
-        </div>
-    );
+  return (
+    <Container fluid className="resume-section">
+      <Particle />
+
+      {/* Download Button */}
+      <Row className="resume-download">
+        <Button
+          variant="primary"
+          href="/Dongyun_Kim_Resume.pdf"
+          download="Dongyun_Kim_Resume.pdf"
+          className="resume-download-btn"
+        >
+          <AiOutlineDownload />
+          &nbsp; Download CV
+        </Button>
+      </Row>
+
+      {/* Resume PDF */}
+      <Row className="resume-pdf">
+        <Document
+          file="/Dongyun_Kim_Resume.pdf"
+          className="resume-document"
+          loading={<p className="resume-loading">Loading Resume...</p>}
+        >
+          <Page
+            pageNumber={1}
+            width={width > 900 ? 850 : width * 0.9}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+          />
+        </Document>
+      </Row>
+    </Container>
+  );
 }
 
 export default Resume;
