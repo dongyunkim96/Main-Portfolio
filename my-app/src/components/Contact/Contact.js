@@ -180,7 +180,7 @@ function Contact() {
                   <h4>Phone</h4>
 
                   <a href="tel:+1XXXXXXXXXX">
-                    (XXX) XXX-XXXX
+                    (540) 986-8669
                   </a>
 
                 </div>
@@ -201,7 +201,7 @@ function Contact() {
                   <h4>Email</h4>
 
                   <a href="mailto:your-email@example.com">
-                    your-email@example.com
+                    dongyunkim96@gmail.com
                   </a>
 
                 </div>
