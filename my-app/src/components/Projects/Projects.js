@@ -40,7 +40,7 @@ function Projects() {
                 "REST API",
               ]}
               description="A responsive e-commerce platform for browsing and purchasing Korean snacks. Built with reusable React components, state management, API integration, shopping cart functionality, and a user-friendly responsive interface."
-              ghLink="https://github.com/dongyunkim96/seb-45_main_025/blob/patch-2/Readme(ENG).md"
+              ghLink="https://github.com/codestates-seb/seb45_main_025/blob/main/Readme(ENG).md"
               demoLink="https://youtube.com/watch?v=xVaUVn1yu20"
             />
           </Col>
