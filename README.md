@@ -113,6 +113,3 @@ Configure `RESEND_API_KEY` in the hosting environment to enable email delivery. 
 
 Contact: [dongyunkim96@gmail.com](mailto:dongyunkim96@gmail.com) · [GitHub](https://github.com/dongyunkim96) · [LinkedIn](https://linkedin.com/in/dongyun-kim-363487272/)
 
-## Credits
-
-The original portfolio was adapted from [Soumyajit Behera’s Portfolio](https://github.com/soumyajit4419/Portfolio).
