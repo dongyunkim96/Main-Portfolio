@@ -1,4 +1,5 @@
 import React from "react";
+import "./ProjectActions.css";
 import { FiArrowUpRight, FiGithub, FiCheck, FiSun, FiCloud, FiTrendingUp } from "react-icons/fi";
 
 function ProductPreview({ type }) {
@@ -23,7 +24,21 @@ export default function ProjectCard({ project, index = 0, compact = false }) {
     <div className="work-content"><p className="eyebrow">{project.label}</p><h2>{project.title}</h2><p className="work-description">{project.description}</p>
       {project.highlights && !compact && <ul className="work-highlights">{project.highlights.map(item => <li key={item}><FiCheck />{item}</li>)}</ul>}
       <div className="tech-tags">{project.techStack.map(tech => <span key={tech}>{tech}</span>)}</div>
-      <div className="work-links">{project.demoLink && <a href={project.demoLink} target="_blank" rel="noreferrer" aria-label={(project.demoLabel || "Live site") + " — " + project.title}>{project.demoLabel || "Live site"} <FiArrowUpRight /></a>}<a href={project.ghLink} target="_blank" rel="noreferrer" aria-label={"Source code — " + project.title}><FiGithub /> Source code</a></div>
+      <div className="project-actions">
+        <div className="project-action-buttons">
+          {project.demoLink && (
+            <a className="project-action project-action-primary" href={project.demoLink} target="_blank" rel="noopener noreferrer" aria-label={(project.demoLabel || "View site") + " — " + project.title} aria-describedby={"external-note-" + project.id}>
+              <span>{project.demoLabel || "View site"}</span>
+              <FiArrowUpRight aria-hidden="true" />
+            </a>
+          )}
+          <a className={"project-action " + (project.demoLink ? "project-action-secondary" : "project-action-primary")} href={project.ghLink} target="_blank" rel="noopener noreferrer" aria-label={"Source code — " + project.title} aria-describedby={"external-note-" + project.id}>
+            <FiGithub aria-hidden="true" />
+            <span>View source</span>
+          </a>
+        </div>
+        <p className="project-action-note" id={"external-note-" + project.id}>Opens in a new tab</p>
+      </div>
     </div>
   </article>;
 }
