@@ -1,67 +1,32 @@
-<h2 align="center">
-  Portfolio Website<br/>
-  <a href="https://dongyunkim.vercel.app/">Dongyun Kim</a>
-</h2>
+# Dongyun Kim — Developer Portfolio
 
-<br/>
+A responsive React portfolio featuring Shilla Bakery, WeatherWear, and CryptoPulse, followed by an archive of applications and experiments.
 
-<center>
+## Development
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
-![GitHub forks](https://img.shields.io/github/forks/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge)
+Use Node.js 24 and npm. The application and Vercel Functions live in `my-app/`.
 
-</center>
+```sh
+cd my-app
+npm ci
+npm start
+```
 
-<h3 align="center">
-    🔹
-    <a href="https://github.com/dongyunkim96/Main-Portfolio/issues">Report Bug</a> &nbsp; &nbsp;
-    🔹
-    <a href="https://github.com/dongyunkim96/Main-Portfolio/issues">Request Feature</a>
-</h3>
+## Verification
 
-## TL;DR
+```sh
+npm test -- --watchAll=false
+npm run build
+```
 
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [dongyunkim96](https://github.com/dongyunkim96/Main-Portfolio). Thanks!
+Routes: Home (`/`), Projects (`/project`), About (`/about`), Resume (`/resume`), and Contact (`/contact`). The `/projects` alias redirects to `/project`.
 
-## Built With
+Project content, ordering, repository URLs, and demo links are maintained in `my-app/src/data/projects.js`. New product visuals for WeatherWear and CryptoPulse are interface illustrations, not live market or forecast data.
 
-My personal portfolio <a href="https://main-portfolio-11tay1xo6-dongyunkim96s-projects.vercel.app/">Dongyun Kim</a> which features some of my github projects as well as my resume and technical skills.<br/>
+## Deployment
 
-This project was built using these technologies.
+Connect this repository to Vercel with **Root Directory** set to `my-app`, build command `npm run build`, and output directory `build`. The included rewrites support direct navigation to application routes and retain the contact function.
 
-- React.js
-- Node.js
-- Express.js
-- CSS3
-- VsCode
-- Vercel
+Set `RESEND_API_KEY` in the hosting environment for contact form delivery. Without it the API returns an unavailable response and the form offers a direct email link. Local `npm start` serves the interface; email delivery requires the deployed Vercel function. Never commit API keys.
 
-## Features
-
-**📖 Multi-Page Layout**
-
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
-
-**📱 Fully Responsive**
-
-## Getting Started
-
-Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
-
-## 🛠 Installation and Setup Instructions
-
-1. Installation: `npm install`
-
-2. In the project directory, you can run: `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.
-
-## Usage Instructions
-
-Open the project folder and Navigate to `/src/components/`. <br/>
-You will find all the components used and you can edit your information accordingly.
+The original portfolio was adapted from [Soumyajit Behera’s Portfolio](https://github.com/soumyajit4419/Portfolio).

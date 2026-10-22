@@ -1,79 +1,29 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import Badge from "react-bootstrap/Badge";
-import { CgWebsite } from "react-icons/cg";
-import { BsGithub } from "react-icons/bs";
+import { FiArrowUpRight, FiGithub, FiCheck, FiSun, FiCloud, FiTrendingUp } from "react-icons/fi";
 
-function ProjectCards({
-  imgPath,
-  title,
-  description,
-  ghLink,
-  demoLink,
-  techStack = [],
-  isBlog = false,
-}) {
-  return (
-    <Card className="project-card-view">
-      {/* Project Image */}
-      <div className="project-image-container">
-        <Card.Img
-          variant="top"
-          src={imgPath}
-          alt={`${title} project`}
-          className="project-card-image"
-        />
-      </div>
-
-      {/* Card Content */}
-      <Card.Body className="project-card-body">
-        {/* Title */}
-        <Card.Title className="project-card-title">
-          {title}
-        </Card.Title>
-
-        {/* Tech Stack */}
-        <div className="project-tech-stack">
-          {techStack.map((tech) => (
-            <Badge key={tech} className="project-tech-badge">
-              {tech}
-            </Badge>
-          ))}
-        </div>
-
-        {/* Description */}
-        <Card.Text className="project-card-description">
-          {description}
-        </Card.Text>
-
-        {/* Buttons */}
-        <div className="project-card-buttons">
-          <Button
-            variant="primary"
-            href={ghLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <BsGithub />
-            <span>{isBlog ? "Blog" : "GitHub"}</span>
-          </Button>
-
-          {!isBlog && demoLink && (
-            <Button
-              variant="primary"
-              href={demoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <CgWebsite />
-              <span>Demo</span>
-            </Button>
-          )}
-        </div>
-      </Card.Body>
-    </Card>
-  );
+function ProductPreview({ type }) {
+  return type === "weather" ? <div className="product-preview weather-preview" aria-label="WeatherWear interface illustration">
+    <div className="preview-top"><strong>weatherwear<span>°</span></strong><span>THE EVERYDAY FORECAST</span></div>
+    <div className="weather-content"><div><span className="preview-caption">DRESS FOR THE DAY</span><h3>A little forecast.<br />A better day.</h3><div className="weather-temp"><FiSun /> 68<span>°</span></div><span>Light layers. Endless possibilities.</span></div><div className="outfit-illustration"><div className="garment">✳</div><span>YOUR EVERYDAY LAYERS</span><strong>Ready for outside.</strong><div><FiCloud /> Forecast to outfit</div></div></div>
+    <div className="preview-bottom"><span>Today</span><span>Week ahead</span><span>Saved places</span><span className="illustration-label">Interface illustration</span></div>
+  </div> : <div className="product-preview crypto-preview" aria-label="CryptoPulse interface illustration">
+    <div className="preview-top"><strong><FiTrendingUp /> CryptoPulse</strong><span>MARKET OVERVIEW</span></div>
+    <div className="crypto-metrics"><div><span>Market insights</span><h3>A pulse on<br />the market.</h3></div><div className="coin-mark">₿</div></div>
+    <svg className="chart-art" viewBox="0 0 500 110" aria-hidden="true"><defs><linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#7ee4b6" stopOpacity=".25"/><stop offset="100%" stopColor="#7ee4b6" stopOpacity="0"/></linearGradient></defs><path d="M0 95 L25 80 50 88 80 57 110 70 140 42 170 58 200 32 230 46 260 20 290 40 320 28 350 45 380 12 410 25 450 6 480 19 500 4 V110 H0Z" fill="url(#chart-fill)"/><path d="M0 95 L25 80 50 88 80 57 110 70 140 42 170 58 200 32 230 46 260 20 290 40 320 28 350 45 380 12 410 25 450 6 480 19 500 4" fill="none" stroke="#7ee4b6" strokeWidth="2.5"/></svg>
+    <div className="preview-bottom"><span>Markets</span><span>Charts</span><span>Watchlist</span><span className="illustration-label">Interface illustration</span></div>
+  </div>;
 }
 
-export default ProjectCards;
+export default function ProjectCard({ project, index = 0, compact = false }) {
+  return <article className={"work-card " + (compact ? "compact-card" : "")}>
+    <div className={"work-visual visual-" + project.id}>
+      {project.preview ? <ProductPreview type={project.preview} /> : <img src={project.image} alt={project.title + " application screenshot"} loading="lazy" decoding="async" width="900" height="560" />}
+      <span className="work-index">{String(index + 1).padStart(2, "0")}</span>
+    </div>
+    <div className="work-content"><p className="eyebrow">{project.label}</p><h2>{project.title}</h2><p className="work-description">{project.description}</p>
+      {project.highlights && !compact && <ul className="work-highlights">{project.highlights.map(item => <li key={item}><FiCheck />{item}</li>)}</ul>}
+      <div className="tech-tags">{project.techStack.map(tech => <span key={tech}>{tech}</span>)}</div>
+      <div className="work-links">{project.demoLink && <a href={project.demoLink} target="_blank" rel="noreferrer" aria-label={(project.demoLabel || "Live site") + " — " + project.title}>{project.demoLabel || "Live site"} <FiArrowUpRight /></a>}<a href={project.ghLink} target="_blank" rel="noreferrer" aria-label={"Source code — " + project.title}><FiGithub /> Source code</a></div>
+    </div>
+  </article>;
+}
