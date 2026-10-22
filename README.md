@@ -46,6 +46,23 @@ The complete archive contains **11 projects**, with filters for Applications, We
 
 The portfolio itself uses JavaScript. Individual showcased applications also use TypeScript and other tools listed on their cards.
 
+## Technical experience across projects
+
+The homepage and About page share six skill groups, with related projects listed on each card. These describe project experience rather than proficiency ratings.
+
+| Area | Technologies used |
+| --- | --- |
+| Languages & foundations | JavaScript, TypeScript, HTML, CSS, React |
+| UI & interaction | Tailwind CSS, Material UI, Emotion, Motion / Framer Motion, Radix UI, TradingView Lightweight Charts |
+| State & API integration | React Router, Redux Toolkit, Zustand, TanStack Query, REST APIs, Zod |
+| Server & data | Node.js, Vercel Functions, Upstash Redis, Resend, Cloudflare Workers, SQLite / Durable Objects |
+| Testing & code quality | Vitest, Jest, React Testing Library, Playwright, ESLint, Prettier |
+| Build & delivery | Git, GitHub, npm, Vite, Vercel, Wrangler |
+
+Cloudflare Workers and SQLite / Durable Objects refer to CryptoPulse’s alternative backend; its current deployment uses Vercel Functions and Upstash Redis. Playwright appears in Shilla Bakery’s end-to-end test tooling. Tool presence does not imply that every deployment or browser check has been independently verified.
+
+Skill content is maintained in `my-app/src/data/skills.js`; the shared presentation is in `my-app/src/components/Skills.js`.
+
 ## Run locally
 
 Use **Node.js 24** and npm. From the repository root:

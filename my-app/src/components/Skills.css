@@ -1,0 +1,94 @@
+.skills-intro {
+  max-width: 700px;
+  margin: -10px 0 30px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.skill-experience {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.skill-experience > svg {
+  flex-shrink: 0;
+}
+
+.skill-experience h3 {
+  letter-spacing: -.025em;
+}
+
+.skill-description {
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.skill-tags {
+  padding: 0 0 25px;
+  list-style: none;
+}
+
+.skill-tags li {
+  padding: 6px 10px;
+  border: 1px solid #42505c;
+  border-radius: 5px;
+  color: #d0dbe4;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.skill-projects {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+.skill-projects > span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent);
+  font-family: Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: .1em;
+}
+
+.hero-toolkit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.hero-toolkit span {
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: #d2d9e0;
+  font-size: 12px;
+}
+
+.hero-stack .toolkit-link {
+  margin-top: 15px;
+  color: var(--accent);
+  font-size: 12px;
+}
+
+@media (min-width: 761px) and (max-width: 1050px) {
+  .skills-section .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .skills-section .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+#skills-heading { scroll-margin-top: 115px; }
