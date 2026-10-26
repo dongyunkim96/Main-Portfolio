@@ -2,16 +2,17 @@ import React from "react";
 import { render, screen, within, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Projects from "./components/Projects/Projects";
+import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact/Contact";
 import { projects } from "./data/projects";
 
-test("shows Shilla Bakery, WeatherWear, and CryptoPulse first and preserves the project archive", () => {
+test("shows SPACEFIT first and preserves all existing projects", () => {
   render(<MemoryRouter><Projects /></MemoryRouter>);
   const cards = screen.getAllByRole("article");
-  expect(cards).toHaveLength(11);
-  expect(cards.slice(0, 3).map(card => within(card).getByRole("heading", { level: 2 }).textContent)).toEqual(["Shilla Bakery", "WeatherWear", "CryptoPulse"]);
-  expect(within(cards[0]).getByRole("link", { name: "Source code — Shilla Bakery" })).toHaveAttribute("href", "https://github.com/dongyunkim96/Shilla-Bakery");
+  expect(cards).toHaveLength(12);
+  expect(cards.slice(0, 4).map(card => within(card).getByRole("heading", { level: 2 }).textContent)).toEqual(["SPACEFIT", "Shilla Bakery", "WeatherWear", "CryptoPulse"]);
+  expect(within(cards[0]).getByRole("link", { name: "Source code — SPACEFIT" })).toHaveAttribute("href", "https://github.com/dongyunkim96/SpaceFit");
   projects.forEach(project => expect(project.ghLink).toMatch(/^https:\/\/github\.com\//));
 });
 
@@ -21,7 +22,7 @@ test("filters projects and restores the complete ordered collection", () => {
   expect(screen.getAllByRole("article")).toHaveLength(3);
   expect(screen.queryByRole("heading", { name: "Shilla Bakery" })).not.toBeInTheDocument();
   fireEvent.click(screen.getByRole("button", { name: "All projects" }));
-  expect(screen.getAllByRole("article")).toHaveLength(11);
+  expect(screen.getAllByRole("article")).toHaveLength(12);
 });
 
 test("mobile navigation reports its state and closes after choosing a page", () => {
@@ -44,4 +45,14 @@ test("contact failure retains the message and provides a direct email fallback",
   expect(screen.getByLabelText("Message")).toHaveValue("A project idea");
   expect(global.fetch).toHaveBeenCalledWith("/api/contact", expect.objectContaining({ method: "POST" }));
   delete global.fetch;
+});
+
+
+test("homepage features SPACEFIT first and retains the existing featured projects", () => {
+  render(<MemoryRouter><Home /></MemoryRouter>);
+  const selectedWork = screen.getByRole("heading", { name: /Selected work/ }).closest("section");
+  const cards = within(selectedWork).getAllByRole("article");
+  expect(cards.map(card => within(card).getByRole("heading", { level: 2 }).textContent)).toEqual(["SPACEFIT", "Shilla Bakery", "WeatherWear", "CryptoPulse"]);
+  expect(within(cards[0]).getByRole("link", { name: "View site — SPACEFIT" })).toHaveAttribute("href", "https://space-fit-six.vercel.app/");
+  expect(within(cards[0]).getByRole("link", { name: "Source code — SPACEFIT" })).toHaveAttribute("href", "https://github.com/dongyunkim96/SpaceFit");
 });

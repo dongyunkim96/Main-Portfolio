@@ -1,3 +1,4 @@
+import spacefit from "../Assets/Spacefit.png";
 import shilla from "../Assets/ShillaBakery.png";
 import snacks from "../Assets/KoreanSnacks.png";
 import easyMart from "../Assets/EasyMart.png";
@@ -9,6 +10,14 @@ import dongtube from "../Assets/Dongtube.png";
 import algorithms from "../Assets/AlgorithmStudy.png";
 
 export const projects = [
+  {
+    id: "spacefit", title: "SPACEFIT", category: "Applications", label: "INTERACTIVE SPACE PLANNING",
+    image: spacefit, featured: true,
+    description: "A dimension-based 2D home layout planner that connects a thoughtful brand experience with an interactive SVG editor. Arrange furniture, explore layouts, and save personal spaces with guest drafts or Firebase accounts.",
+    highlights: ["Real-dimension SVG editing with undo & redo", "Browser drafts & account-specific cloud storage"],
+    techStack: ["React", "TypeScript", "SVG", "Zustand", "Firebase"],
+    ghLink: "https://github.com/dongyunkim96/SpaceFit", demoLink: "https://space-fit-six.vercel.app/"
+  },
   {
     id: "shilla", title: "Shilla Bakery", category: "Web experiences", label: "BAKERY & BRAND EXPERIENCE",
     image: shilla, featured: true,

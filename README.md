@@ -14,11 +14,12 @@ The homepage and unfiltered project archive present these projects first, in thi
 
 | Project | Overview | Live site | Source |
 | --- | --- | --- | --- |
-| **01 · Shilla Bakery** | A responsive bakery brand experience built with React, TypeScript, and Tailwind CSS. | [View site](https://shilla-bakery.vercel.app) | [View source](https://github.com/dongyunkim96/Shilla-Bakery) |
-| **02 · WeatherWear** | A weather companion with outfit recommendations, commute layers, saved places, and trip packing lists. | [View site](https://weather-wear-coral.vercel.app) | [View source](https://github.com/dongyunkim96/WeatherWear) |
-| **03 · CryptoPulse** | A cryptocurrency research dashboard with charts, asset search, a watchlist, and cached market data. | [View site](https://cryptopulse-snowy.vercel.app) | [View source](https://github.com/dongyunkim96/CryptoPulse) |
+| **01 · SPACEFIT** | A dimension-based 2D home layout planner with an interactive SVG editor, browser drafts, and Firebase account storage. | [View site](https://space-fit-six.vercel.app/) | [View source](https://github.com/dongyunkim96/SpaceFit) |
+| **02 · Shilla Bakery** | A responsive bakery brand experience built with React, TypeScript, and Tailwind CSS. | [View site](https://shilla-bakery.vercel.app) | [View source](https://github.com/dongyunkim96/Shilla-Bakery) |
+| **03 · WeatherWear** | A weather companion with outfit recommendations, commute layers, saved places, and trip packing lists. | [View site](https://weather-wear-coral.vercel.app) | [View source](https://github.com/dongyunkim96/WeatherWear) |
+| **04 · CryptoPulse** | A cryptocurrency research dashboard with charts, asset search, a watchlist, and cached market data. | [View site](https://cryptopulse-snowy.vercel.app) | [View source](https://github.com/dongyunkim96/CryptoPulse) |
 
-The complete archive contains **11 projects**, with filters for Applications, Web experiences, and Experiments. WeatherWear and CryptoPulse card visuals are interface illustrations; they do not display live forecast or market data.
+The complete archive contains **12 projects**, with filters for Applications, Web experiences, and Experiments. WeatherWear and CryptoPulse card visuals are interface illustrations; they do not display live forecast or market data.
 
 ## Design and user experience
 
@@ -118,7 +119,7 @@ my-app/
 └── vercel.json                        # SPA and API routing
 ```
 
-To update project content, edit `my-app/src/data/projects.js`. Keep featured entries first; the homepage uses the first three items. Project button styling lives in `my-app/src/components/Projects/ProjectActions.css`.
+To update project content, edit `my-app/src/data/projects.js`. Keep featured entries first; the homepage renders entries marked `featured: true` in the same order. Project button styling lives in `my-app/src/components/Projects/ProjectActions.css`.
 
 ## Deployment and contact
 
