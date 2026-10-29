@@ -34,23 +34,23 @@
 .project-action-primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #14251f;
+  color: var(--button-text);
 }
 
 .project-action-primary:hover {
-  background: #c5f8e2;
-  border-color: #c5f8e2;
-  color: #14251f;
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: var(--button-text);
 }
 
 .project-action-secondary {
   background: var(--surface-high);
-  border-color: #566576;
+  border-color: var(--control-border);
   color: var(--text);
 }
 
 .project-action-secondary:hover {
-  background: #2b3b3b;
+  background: var(--control-hover);
   border-color: var(--accent);
   color: var(--accent);
 }

@@ -5,6 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#101419" />
+    <script>
+      (function () {
+        var theme = "dark";
+        try { if (localStorage.getItem("portfolio-theme") === "light") theme = "light"; } catch (_) {}
+        var root = document.documentElement;
+        root.dataset.theme = theme;
+        root.style.colorScheme = theme;
+        var color = theme === "light" ? "#f6f8f5" : "#101419";
+        root.style.backgroundColor = color;
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
+      })();
+    </script>
     <meta name="description" content="Dongyun Kim is a front-end developer in Northern Virginia building thoughtful, responsive web experiences with React and TypeScript. Explore projects, skills, and experience." />
     <meta property="og:title" content="Dongyun Kim — Front-End Developer" />
     <meta property="og:description" content="Thoughtful design. Purposeful code. Explore React and TypeScript applications by Dongyun Kim." />

@@ -24,7 +24,9 @@ The complete archive contains **13 projects**, with filters for Applications, We
 
 ## Design and user experience
 
-- A consistent navy and mint visual system, readable typography, and responsive layouts.
+- Two coordinated themes: the original navy/mint dark mode and a soft ivory/forest-green light mode.
+- A keyboard-accessible header toggle remains available on desktop and mobile, saves the choice in `localStorage`, and restores it before React renders to avoid a theme flash. Dark is the default when no valid preference exists. Theme changes also synchronize across tabs; toggling still works when browser storage is unavailable.
+- Theme-aware navigation, cards, code preview, filters, skill tags, buttons, and contact fields.
 - Large **View site** and **View source** buttons on both homepage cards and the project archive.
 - Primary site buttons and outlined source buttons make the two destinations easy to distinguish. Projects without a demo feature a primary source button.
 - Button targets are at least **48px tall**, with generous spacing and automatic wrapping when the card is narrow.
@@ -32,6 +34,7 @@ The complete archive contains **13 projects**, with filters for Applications, We
 - External actions open in a new tab, with a visible note and project-specific accessible names.
 - Mobile navigation, a skip-to-content link, reduced-motion support, and labeled contact fields.
 - Lazy-loaded routes and images, page-specific titles, descriptive metadata, and a custom favicon.
+- An expanded About page connects the published resume with project decisions, Coding Temple and CodeStates training, Army communications/leadership experience, Virginia Tech electrical engineering background, and listed certifications.
 - An embedded PDF resume with direct open and download options.
 
 ## Technology
@@ -63,7 +66,7 @@ The homepage and About page share six skill groups, with related projects listed
 
 Cloudflare Workers and SQLite / Durable Objects refer to CryptoPulse’s alternative backend; its current deployment uses Vercel Functions and Upstash Redis. STILLROOM contributes React Context/reducer state, deterministic recommendations, stock-aware bag logic, and Motion/Radix interactions. Its checkout is a frontend demo with no payment processing. Playwright appears in STILLROOM and Shilla Bakery’s end-to-end test tooling. Tool presence does not imply that every deployment or browser check has been independently verified.
 
-Skill content is maintained in `my-app/src/data/skills.js`; the shared presentation is in `my-app/src/components/Skills.js`.
+Skill content is maintained in `my-app/src/data/skills.js`; the shared presentation is in `my-app/src/components/Skills.js`. Resume-based About content is in `my-app/src/data/about.js`. Theme tokens are in `my-app/src/theme.css`, and the toggle is in `my-app/src/components/ThemeToggle.js`.
 
 ## Run locally
 
@@ -86,7 +89,7 @@ npm run build
 node node_modules/react-scripts/scripts/test.js --watchAll=false --runInBand
 ```
 
-The existing tests cover featured project order, project filtering, mobile menu state, and contact failure recovery. Browser-based visual checks and actual email delivery require separate verification.
+The tests cover featured project order, project filtering, mobile menu state, contact failure recovery, theme persistence, both toggle directions, invalid saved values, blocked storage, and cross-tab synchronization. Browser-based visual checks and actual email delivery require separate verification.
 
 ## Routes
 

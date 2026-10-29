@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home/Home";
 import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
+import "./theme.css";
 
 const Projects = lazy(() => import("./components/Projects/Projects"));
 const About = lazy(() => import("./components/About/About"));

@@ -32,9 +32,9 @@
 
 .skill-tags li {
   padding: 6px 10px;
-  border: 1px solid #42505c;
+  border: 1px solid var(--tag-border);
   border-radius: 5px;
-  color: #d0dbe4;
+  color: var(--strong-muted);
   font-size: 12px;
   line-height: 1.6;
 }
@@ -68,7 +68,7 @@
   padding: 4px 10px;
   border: 1px solid var(--line);
   border-radius: 5px;
-  color: #d2d9e0;
+  color: var(--strong-muted);
   font-size: 12px;
 }
 
