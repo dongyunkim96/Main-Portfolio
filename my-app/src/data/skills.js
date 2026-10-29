@@ -3,19 +3,19 @@ export const skillGroups = [
     title: "Languages & foundations",
     description: "The building blocks behind responsive, component-based interfaces.",
     skills: ["JavaScript", "TypeScript", "HTML", "CSS", "React"],
-    projects: ["Shilla Bakery", "WeatherWear", "JavaScript Practice", "CSS Experience"]
+    projects: ["STILLROOM", "Shilla Bakery", "WeatherWear", "JavaScript Practice", "CSS Experience"]
   },
   {
     title: "UI & interaction",
     description: "Styling systems, accessible primitives, motion, and data visualization.",
     skills: ["Tailwind CSS", "Material UI", "Emotion", "Motion / Framer Motion", "Radix UI", "TradingView Lightweight Charts"],
-    projects: ["EasyMart", "CryptoPulse", "Shilla Bakery"]
+    projects: ["STILLROOM", "EasyMart", "CryptoPulse", "Shilla Bakery"]
   },
   {
     title: "State & API integration",
     description: "Routing, shared client state, cached requests, and validated responses.",
-    skills: ["React Router", "Redux Toolkit", "Zustand", "TanStack Query", "REST APIs", "Zod"],
-    projects: ["EasyMart", "CryptoPulse", "WeatherWear"]
+    skills: ["React Context / useReducer", "React Router", "Redux Toolkit", "Zustand", "TanStack Query", "REST APIs", "Zod"],
+    projects: ["STILLROOM", "EasyMart", "CryptoPulse", "WeatherWear"]
   },
   {
     title: "Server & data",
@@ -27,12 +27,12 @@ export const skillGroups = [
     title: "Testing & code quality",
     description: "Unit tests, component interactions, end-to-end test tooling, and consistent source checks.",
     skills: ["Vitest", "Jest", "React Testing Library", "Playwright", "ESLint", "Prettier"],
-    projects: ["Shilla Bakery", "CryptoPulse", "WeatherWear", "Portfolio"]
+    projects: ["STILLROOM", "Shilla Bakery", "CryptoPulse", "WeatherWear", "Portfolio"]
   },
   {
     title: "Build & delivery",
     description: "Version control, local builds, and deployment workflows across projects.",
     skills: ["Git", "GitHub", "npm", "Vite", "Vercel", "Wrangler"],
-    projects: ["Shilla Bakery", "CryptoPulse", "WeatherWear", "Portfolio"]
+    projects: ["STILLROOM", "Shilla Bakery", "CryptoPulse", "WeatherWear", "Portfolio"]
   }
 ];

@@ -1,4 +1,5 @@
 import spacefit from "../Assets/Spacefit.png";
+import stillroom from "../Assets/StillRoom.jpg";
 import shilla from "../Assets/ShillaBakery.png";
 import snacks from "../Assets/KoreanSnacks.png";
 import easyMart from "../Assets/EasyMart.png";
@@ -17,6 +18,14 @@ export const projects = [
     highlights: ["Real-dimension SVG editing with undo & redo", "Browser drafts & account-specific cloud storage"],
     techStack: ["React", "TypeScript", "SVG", "Zustand", "Firebase"],
     ghLink: "https://github.com/dongyunkim96/SpaceFit", demoLink: "https://space-fit-six.vercel.app/"
+  },
+  {
+    id: "stillroom", title: "STILLROOM", category: "Web experiences", label: "HOME FRAGRANCE · DEMO COMMERCE",
+    image: stillroom, featured: true,
+    description: "An editorial home fragrance storefront with 24 products, a five-step scent finder, and a complete demo shopping journey. Explore scents by mood, choose gift details, and create a local demo order without payment.",
+    highlights: ["Deterministic scent matching & URL-based filters", "Stock-aware bag, gift wrapping & demo checkout"],
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Motion", "Radix UI", "Vite"],
+    ghLink: "https://github.com/dongyunkim96/StillRoom", demoLink: "https://still-room-five.vercel.app/"
   },
   {
     id: "shilla", title: "Shilla Bakery", category: "Web experiences", label: "BAKERY & BRAND EXPERIENCE",

@@ -15,11 +15,12 @@ The homepage and unfiltered project archive present these projects first, in thi
 | Project | Overview | Live site | Source |
 | --- | --- | --- | --- |
 | **01 · SPACEFIT** | A dimension-based 2D home layout planner with an interactive SVG editor, browser drafts, and Firebase account storage. | [View site](https://space-fit-six.vercel.app/) | [View source](https://github.com/dongyunkim96/SpaceFit) |
-| **02 · Shilla Bakery** | A responsive bakery brand experience built with React, TypeScript, and Tailwind CSS. | [View site](https://shilla-bakery.vercel.app) | [View source](https://github.com/dongyunkim96/Shilla-Bakery) |
-| **03 · WeatherWear** | A weather companion with outfit recommendations, commute layers, saved places, and trip packing lists. | [View site](https://weather-wear-coral.vercel.app) | [View source](https://github.com/dongyunkim96/WeatherWear) |
-| **04 · CryptoPulse** | A cryptocurrency research dashboard with charts, asset search, a watchlist, and cached market data. | [View site](https://cryptopulse-snowy.vercel.app) | [View source](https://github.com/dongyunkim96/CryptoPulse) |
+| **02 · STILLROOM** | An editorial home fragrance storefront with scent recommendations, gift wrapping, and a complete demo checkout. | [View site](https://still-room-five.vercel.app/) | [View source](https://github.com/dongyunkim96/StillRoom) |
+| **03 · Shilla Bakery** | A responsive bakery brand experience built with React, TypeScript, and Tailwind CSS. | [View site](https://shilla-bakery.vercel.app) | [View source](https://github.com/dongyunkim96/Shilla-Bakery) |
+| **04 · WeatherWear** | A weather companion with outfit recommendations, commute layers, saved places, and trip packing lists. | [View site](https://weather-wear-coral.vercel.app) | [View source](https://github.com/dongyunkim96/WeatherWear) |
+| **05 · CryptoPulse** | A cryptocurrency research dashboard with charts, asset search, a watchlist, and cached market data. | [View site](https://cryptopulse-snowy.vercel.app) | [View source](https://github.com/dongyunkim96/CryptoPulse) |
 
-The complete archive contains **12 projects**, with filters for Applications, Web experiences, and Experiments. WeatherWear and CryptoPulse card visuals are interface illustrations; they do not display live forecast or market data.
+The complete archive contains **13 projects**, with filters for Applications, Web experiences, and Experiments. WeatherWear and CryptoPulse card visuals are interface illustrations; they do not display live forecast or market data.
 
 ## Design and user experience
 
@@ -55,12 +56,12 @@ The homepage and About page share six skill groups, with related projects listed
 | --- | --- |
 | Languages & foundations | JavaScript, TypeScript, HTML, CSS, React |
 | UI & interaction | Tailwind CSS, Material UI, Emotion, Motion / Framer Motion, Radix UI, TradingView Lightweight Charts |
-| State & API integration | React Router, Redux Toolkit, Zustand, TanStack Query, REST APIs, Zod |
+| State & API integration | React Context / useReducer, React Router, Redux Toolkit, Zustand, TanStack Query, REST APIs, Zod |
 | Server & data | Node.js, Vercel Functions, Upstash Redis, Resend, Cloudflare Workers, SQLite / Durable Objects |
 | Testing & code quality | Vitest, Jest, React Testing Library, Playwright, ESLint, Prettier |
 | Build & delivery | Git, GitHub, npm, Vite, Vercel, Wrangler |
 
-Cloudflare Workers and SQLite / Durable Objects refer to CryptoPulse’s alternative backend; its current deployment uses Vercel Functions and Upstash Redis. Playwright appears in Shilla Bakery’s end-to-end test tooling. Tool presence does not imply that every deployment or browser check has been independently verified.
+Cloudflare Workers and SQLite / Durable Objects refer to CryptoPulse’s alternative backend; its current deployment uses Vercel Functions and Upstash Redis. STILLROOM contributes React Context/reducer state, deterministic recommendations, stock-aware bag logic, and Motion/Radix interactions. Its checkout is a frontend demo with no payment processing. Playwright appears in STILLROOM and Shilla Bakery’s end-to-end test tooling. Tool presence does not imply that every deployment or browser check has been independently verified.
 
 Skill content is maintained in `my-app/src/data/skills.js`; the shared presentation is in `my-app/src/components/Skills.js`.
 
