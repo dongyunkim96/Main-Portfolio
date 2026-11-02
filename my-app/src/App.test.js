@@ -7,14 +7,16 @@ import Navbar from "./components/Navbar";
 import Contact from "./components/Contact/Contact";
 import { projects } from "./data/projects";
 
-test("shows STILLROOM after SPACEFIT and preserves all existing projects", () => {
+test("features CONVENE and preserves all existing projects", () => {
   render(<MemoryRouter><Projects /></MemoryRouter>);
   const cards = screen.getAllByRole("article");
-  expect(cards).toHaveLength(13);
-  expect(cards.slice(0, 5).map(card => within(card).getByRole("heading", { level: 2 }).textContent)).toEqual(["SPACEFIT", "STILLROOM", "Shilla Bakery", "WeatherWear", "CryptoPulse"]);
-  expect(within(cards[0]).getByRole("link", { name: "Source code — SPACEFIT" })).toHaveAttribute("href", "https://github.com/dongyunkim96/SpaceFit");
-  expect(within(cards[1]).getByRole("link", { name: "View site — STILLROOM" })).toHaveAttribute("href", "https://still-room-five.vercel.app/");
-  expect(within(cards[1]).getByRole("link", { name: "Source code — STILLROOM" })).toHaveAttribute("href", "https://github.com/dongyunkim96/StillRoom");
+  expect(cards).toHaveLength(14);
+  expect(within(cards[0]).getByRole("link", { name: "View site — CONVENE" })).toHaveAttribute("href", "https://convene-coral-six.vercel.app");
+  expect(within(cards[0]).getByRole("link", { name: "Source code — CONVENE" })).toHaveAttribute("href", "https://github.com/dongyunkim96/Convene");
+  expect(cards.slice(0, 6).map(card => within(card).getByRole("heading", { level: 2 }).textContent)).toEqual(["CONVENE", "SPACEFIT", "STILLROOM", "Shilla Bakery", "WeatherWear", "CryptoPulse"]);
+  expect(within(cards[1]).getByRole("link", { name: "Source code — SPACEFIT" })).toHaveAttribute("href", "https://github.com/dongyunkim96/SpaceFit");
+  expect(within(cards[2]).getByRole("link", { name: "View site — STILLROOM" })).toHaveAttribute("href", "https://still-room-five.vercel.app/");
+  expect(within(cards[2]).getByRole("link", { name: "Source code — STILLROOM" })).toHaveAttribute("href", "https://github.com/dongyunkim96/StillRoom");
   projects.forEach(project => expect(project.ghLink).toMatch(/^https:\/\/github\.com\//));
 });
 
@@ -27,7 +29,7 @@ test("filters projects and restores the complete ordered collection", () => {
   expect(screen.getAllByRole("article")).toHaveLength(2);
   expect(screen.getByRole("heading", { name: "STILLROOM" })).toBeInTheDocument();
   fireEvent.click(screen.getByRole("button", { name: "All projects" }));
-  expect(screen.getAllByRole("article")).toHaveLength(13);
+  expect(screen.getAllByRole("article")).toHaveLength(14);
 });
 
 test("mobile navigation reports its state and closes after choosing a page", () => {
@@ -53,11 +55,11 @@ test("contact failure retains the message and provides a direct email fallback",
 });
 
 
-test("homepage features STILLROOM after SPACEFIT and retains the existing featured projects", () => {
+test("homepage features CONVENE and retains the existing featured projects", () => {
   render(<MemoryRouter><Home /></MemoryRouter>);
   const selectedWork = screen.getByRole("heading", { name: /Selected work/ }).closest("section");
   const cards = within(selectedWork).getAllByRole("article");
-  expect(cards.map(card => within(card).getByRole("heading", { level: 2 }).textContent)).toEqual(["SPACEFIT", "STILLROOM", "Shilla Bakery", "WeatherWear", "CryptoPulse"]);
-  expect(within(cards[0]).getByRole("link", { name: "View site — SPACEFIT" })).toHaveAttribute("href", "https://space-fit-six.vercel.app/");
-  expect(within(cards[0]).getByRole("link", { name: "Source code — SPACEFIT" })).toHaveAttribute("href", "https://github.com/dongyunkim96/SpaceFit");
+  expect(cards.map(card => within(card).getByRole("heading", { level: 2 }).textContent)).toEqual(["CONVENE", "SPACEFIT", "STILLROOM", "Shilla Bakery", "WeatherWear", "CryptoPulse"]);
+  expect(within(cards[1]).getByRole("link", { name: "View site — SPACEFIT" })).toHaveAttribute("href", "https://space-fit-six.vercel.app/");
+  expect(within(cards[1]).getByRole("link", { name: "Source code — SPACEFIT" })).toHaveAttribute("href", "https://github.com/dongyunkim96/SpaceFit");
 });

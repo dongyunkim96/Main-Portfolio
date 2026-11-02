@@ -1,3 +1,4 @@
+import convene from "../Assets/Convene.png";
 import spacefit from "../Assets/Spacefit.png";
 import stillroom from "../Assets/StillRoom.jpg";
 import shilla from "../Assets/ShillaBakery.png";
@@ -11,6 +12,14 @@ import dongtube from "../Assets/Dongtube.png";
 import algorithms from "../Assets/AlgorithmStudy.png";
 
 export const projects = [
+  {
+    id: "convene", title: "CONVENE", category: "Applications", label: "CONFERENCE PLATFORM · FULL-STACK SVELTE",
+    image: convene, featured: true,
+    description: "A full-stack conference platform connecting attendee registration, session reservations, personal schedules, and QR passes. Transactional bookings and waitlist promotions keep attendee and organizer views consistent in a shared Neon database.",
+    highlights: ["Conflict-aware reservations & FIFO waitlist promotion", "QR passes, organizer check-in & CSV reporting"],
+    techStack: ["Svelte", "SvelteKit", "TypeScript", "Tailwind CSS", "PostgreSQL", "Neon"],
+    ghLink: "https://github.com/dongyunkim96/Convene", demoLink: "https://convene-coral-six.vercel.app"
+  },
   {
     id: "spacefit", title: "SPACEFIT", category: "Applications", label: "INTERACTIVE SPACE PLANNING",
     image: spacefit, featured: true,
