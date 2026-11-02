@@ -14,13 +14,15 @@ The homepage and unfiltered project archive present these projects first, in thi
 
 | Project | Overview | Live site | Source |
 | --- | --- | --- | --- |
-| **01 · SPACEFIT** | A dimension-based 2D home layout planner with an interactive SVG editor, browser drafts, and Firebase account storage. | [View site](https://space-fit-six.vercel.app/) | [View source](https://github.com/dongyunkim96/SpaceFit) |
-| **02 · STILLROOM** | An editorial home fragrance storefront with scent recommendations, gift wrapping, and a complete demo checkout. | [View site](https://still-room-five.vercel.app/) | [View source](https://github.com/dongyunkim96/StillRoom) |
-| **03 · Shilla Bakery** | A responsive bakery brand experience built with React, TypeScript, and Tailwind CSS. | [View site](https://shilla-bakery.vercel.app) | [View source](https://github.com/dongyunkim96/Shilla-Bakery) |
-| **04 · WeatherWear** | A weather companion with outfit recommendations, commute layers, saved places, and trip packing lists. | [View site](https://weather-wear-coral.vercel.app) | [View source](https://github.com/dongyunkim96/WeatherWear) |
-| **05 · CryptoPulse** | A cryptocurrency research dashboard with charts, asset search, a watchlist, and cached market data. | [View site](https://cryptopulse-snowy.vercel.app) | [View source](https://github.com/dongyunkim96/CryptoPulse) |
+| **01 · HealthCareKim** | A multi-clinic workspace for case triage, assignments, appointments, role-based access, and transactional audit history, with isolated synthetic demos on Neon. | [View site](https://health-care-kim.vercel.app/) | [View source](https://github.com/dongyunkim96/HealthCareKim) |
+| **02 · CONVENE** | A full-stack conference platform with attendee registration, conflict-aware reservations, FIFO waitlists, QR passes, and organizer check-in. | [View site](https://convene-coral-six.vercel.app) | [View source](https://github.com/dongyunkim96/Convene) |
+| **03 · SPACEFIT** | A dimension-based 2D home layout planner with an interactive SVG editor, browser drafts, and Firebase account storage. | [View site](https://space-fit-six.vercel.app/) | [View source](https://github.com/dongyunkim96/SpaceFit) |
+| **04 · STILLROOM** | An editorial home fragrance storefront with scent recommendations, gift wrapping, and a complete demo checkout. | [View site](https://still-room-five.vercel.app/) | [View source](https://github.com/dongyunkim96/StillRoom) |
+| **05 · Shilla Bakery** | A responsive bakery brand experience built with React, TypeScript, and Tailwind CSS. | [View site](https://shilla-bakery.vercel.app) | [View source](https://github.com/dongyunkim96/Shilla-Bakery) |
+| **06 · WeatherWear** | A weather companion with outfit recommendations, commute layers, saved places, and trip packing lists. | [View site](https://weather-wear-coral.vercel.app) | [View source](https://github.com/dongyunkim96/WeatherWear) |
+| **07 · CryptoPulse** | A cryptocurrency research dashboard with charts, asset search, a watchlist, and cached market data. | [View site](https://cryptopulse-snowy.vercel.app) | [View source](https://github.com/dongyunkim96/CryptoPulse) |
 
-The complete archive contains **13 projects**, with filters for Applications, Web experiences, and Experiments. WeatherWear and CryptoPulse card visuals are interface illustrations; they do not display live forecast or market data.
+The complete archive contains **15 projects**, with filters for Applications, Web experiences, and Experiments. WeatherWear and CryptoPulse card visuals are interface illustrations; they do not display live forecast or market data.
 
 ## Design and user experience
 

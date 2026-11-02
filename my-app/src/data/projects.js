@@ -1,3 +1,4 @@
+import healthcarekim from "../Assets/HealthCareKim.png";
 import convene from "../Assets/Convene.png";
 import spacefit from "../Assets/Spacefit.png";
 import stillroom from "../Assets/StillRoom.jpg";
@@ -12,6 +13,14 @@ import dongtube from "../Assets/Dongtube.png";
 import algorithms from "../Assets/AlgorithmStudy.png";
 
 export const projects = [
+  {
+    id: "healthcarekim", title: "HealthCareKim", category: "Applications", label: "CLINIC OPERATIONS · FULL-STACK NEXT.JS",
+    image: healthcarekim, featured: true,
+    description: "A multi-clinic operations workspace connecting case triage, team assignments, appointments, and audit history. Role-based access and transactional writes keep each visitor's isolated synthetic demo consistent in Neon PostgreSQL.",
+    highlights: ["Version-safe case edits, notes & audit history", "Clinic-scoped roles & conflict-aware appointment scheduling"],
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "tRPC", "PostgreSQL", "Neon"],
+    ghLink: "https://github.com/dongyunkim96/HealthCareKim", demoLink: "https://health-care-kim.vercel.app/"
+  },
   {
     id: "convene", title: "CONVENE", category: "Applications", label: "CONFERENCE PLATFORM · FULL-STACK SVELTE",
     image: convene, featured: true,
