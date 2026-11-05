@@ -3,13 +3,15 @@ import { Link, useParams } from "react-router-dom";
 import { FiArrowLeft, FiArrowRight, FiArrowUpRight, FiGithub } from "react-icons/fi";
 import { projects } from "../../data/projects";
 import { caseStudies } from "../../data/caseStudies";
+import ProjectOverview from "./ProjectOverview";
 
 export default function CaseStudy() {
   const { projectId } = useParams();
   const project = projects.find(item => item.id === projectId);
   const study = caseStudies[projectId];
-  useEffect(() => { document.title = `${project && study ? project.title + " — Engineering case study" : "Case study not found"} — Dongyun Kim`; }, [project, study]);
-  if (!project || !study) return <div className="page-shell study-page"><h1>Case study not found.</h1><p>Explore the archive for available demos and engineering notes.</p><Link className="text-link" to="/project">Back to projects <FiArrowRight /></Link></div>;
+  useEffect(() => { document.title = `${project ? project.title + (study ? " — Engineering case study" : " — Project overview") : "Case study not found"} — Dongyun Kim`; }, [project, study]);
+  if (!project) return <div className="page-shell study-page"><h1>Case study not found.</h1><p>Explore the archive for available demos and engineering notes.</p><Link className="text-link" to="/project">Back to projects <FiArrowRight /></Link></div>;
+  if (!study) return <ProjectOverview project={project} />;
   return <div className="page-shell study-page">
     <Link to="/project" className="study-back"><FiArrowLeft aria-hidden="true" /> All projects</Link>
     <header className="study-header"><p className="section-kicker">Engineering case study / {study.focus}</p><h1>{project.title}</h1><p className="study-summary">{study.summary}</p><div className="hero-actions"><a className="button button-primary" href={project.demoLink} target="_blank" rel="noreferrer">Explore live project <FiArrowUpRight aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a><a className="text-link" href={project.ghLink} target="_blank" rel="noreferrer"><FiGithub aria-hidden="true" /> Inspect source<span className="sr-only"> (opens in a new tab)</span></a></div></header>

@@ -28,7 +28,7 @@ The complete archive contains **16 projects**, with filters for Applications, We
 ## Design and user experience
 
 - A project-led hero replaces the decorative code panel with an actual HealthCareKim interface and direct access to its engineering case study.
-- Four case studies explain context, contribution, architecture, decisions, tradeoffs, verification, limitations, and a guided demo workflow: HealthCareKim, CONVENE, SPACEFIT, and PALETTE.
+- All 16 project cards open internal description pages, with hover and keyboard-focus feedback. Four in-depth case studies explain context, contribution, architecture, decisions, tradeoffs, verification, limitations, and a guided demo workflow: HealthCareKim, CONVENE, SPACEFIT, and PALETTE. The other 12 pages provide project-specific introductions, implementation focus, technology, and source/demo links.
 - Project cards expose implementation highlights and internal case-study links alongside the existing live-site and source actions.
 - The skills section connects current frontend, full-stack, interaction, and testing tools to inspectable project evidence. It uses no proficiency percentages or invented business-impact metrics.
 - A direct resume download, GitHub link, and contact paths are available from the hero.
@@ -102,14 +102,14 @@ npm run build
 node node_modules/react-scripts/scripts/test.js --watchAll=false --runInBand
 ```
 
-The 15 tests cover featured project order, filtering, all four case-study pages and their actions/scope, unknown-case recovery, mobile menu state, contact failure recovery, theme persistence, both toggle directions, invalid saved values, blocked storage, and cross-tab synchronization. Actual email delivery requires separate verification. The redesign's local browser checks and their limits are recorded in `docs/employer-redesign.md`.
+The 28 tests cover featured project order, filtering, all 16 project description pages, card-to-detail navigation, source-only projects, unknown-case recovery, mobile menu state, contact failure recovery, theme persistence, both toggle directions, invalid saved values, blocked storage, and cross-tab synchronization. Actual email delivery requires separate verification. The redesign's local browser checks and their limits are recorded in `docs/employer-redesign.md`.
 
 ## Routes
 
 | Page | Route |
 | --- | --- |
 | Home | `/` |
-| Engineering case study | `/project/:projectId` for `healthcarekim`, `convene`, `spacefit`, and `palette` |
+| Project description | `/project/:projectId` for all 16 catalog IDs; four include in-depth engineering case studies |
 | Projects | `/project` |
 | About | `/about` |
 | Resume | `/resume` |

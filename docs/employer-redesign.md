@@ -30,3 +30,11 @@ Case studies summarize existing project documentation and implementations. Healt
 - Screenshots are in `docs/screenshots/`. They are local preview captures, not proof of a hosted deployment.
 
 The existing Create React App dependency notices and React Testing Library `act` deprecation warning remain. No dependency migration was included. Automated accessibility certification, physical-device testing, broad cross-browser testing, live email delivery, and load benchmarks are outside these checks.
+
+## Project-card navigation follow-up
+
+All 16 catalog cards now use a native title link with a stretched CSS click area. Image and empty-card clicks open the internal project description. Live-site and source links sit above that area and retain their independent destinations. Hover styling adds an accent border, shadow, and a small image scale; keyboard focus outlines the whole card. Animated effects respect reduced motion.
+
+The four detailed engineering narratives are retained. The remaining 12 projects use a shared overview layout with project-specific context and feature notes, technology, imagery, and available destinations. Source-only projects do not receive invented live-demo links. The overview copy follows existing catalog/About content and distinguishes team projects and experiments.
+
+Verification: all 28 regression tests passed; production build passed. Local browser checks confirmed an image-coordinate click opens HealthCareKim, Tab applies a solid card focus outline, Enter opens the detail, and hit-testing over the visible live-site button resolves its external URL rather than the card overlay. Shilla Bakery's new page rendered, and WeatherWear's overview had no document/illustration overflow at 390px. Mouse-hover effects were reviewed in CSS; no automated hover simulation was performed.

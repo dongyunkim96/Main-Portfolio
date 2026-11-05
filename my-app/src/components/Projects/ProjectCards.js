@@ -4,7 +4,7 @@ import { caseStudies } from "../../data/caseStudies";
 import "./ProjectActions.css";
 import { FiArrowUpRight, FiGithub, FiCheck, FiSun, FiCloud, FiTrendingUp } from "react-icons/fi";
 
-function ProductPreview({ type }) {
+export function ProductPreview({ type }) {
   return type === "weather" ? <div className="product-preview weather-preview" aria-label="WeatherWear interface illustration">
     <div className="preview-top"><strong>weatherwear<span>°</span></strong><span>THE EVERYDAY FORECAST</span></div>
     <div className="weather-content"><div><span className="preview-caption">DRESS FOR THE DAY</span><h3>A little forecast.<br />A better day.</h3><div className="weather-temp"><FiSun /> 68<span>°</span></div><span>Light layers. Endless possibilities.</span></div><div className="outfit-illustration"><div className="garment">✳</div><span>YOUR EVERYDAY LAYERS</span><strong>Ready for outside.</strong><div><FiCloud /> Forecast to outfit</div></div></div>
@@ -23,11 +23,11 @@ export default function ProjectCard({ project, index = 0, compact = false }) {
       {project.preview ? <ProductPreview type={project.preview} /> : <img src={project.image} alt={project.title + " application screenshot"} loading="lazy" decoding="async" width="900" height="560" />}
       <span className="work-index">{String(index + 1).padStart(2, "0")}</span>
     </div>
-    <div className="work-content"><p className="eyebrow">{project.label}</p><h2>{project.title}</h2><p className="work-description">{project.description}</p>
+    <div className="work-content"><p className="eyebrow">{project.label}</p><h2><Link className="card-title-link" to={`/project/${project.id}`}>{project.title}</Link></h2><p className="work-description">{project.description}</p>
       {project.highlights && <ul className="work-highlights">{project.highlights.map(item => <li key={item}><FiCheck aria-hidden="true" />{item}</li>)}</ul>}
       <div className="tech-tags">{project.techStack.map(tech => <span key={tech}>{tech}</span>)}</div>
       <div className="project-actions">
-        {caseStudies[project.id] && <Link className="case-study-link" to={`/project/${project.id}`}>Engineering case study <FiArrowUpRight aria-hidden="true" /><span className="sr-only"> — {project.title}</span></Link>}
+        <Link className="case-study-link" to={`/project/${project.id}`}>{caseStudies[project.id] ? "Engineering case study" : "Project overview"} <FiArrowUpRight aria-hidden="true" /><span className="sr-only"> — {project.title}</span></Link>
         <div className="project-action-buttons">
           {project.demoLink && (
             <a className="project-action project-action-primary" href={project.demoLink} target="_blank" rel="noopener noreferrer" aria-label={(project.demoLabel || "View site") + " — " + project.title} aria-describedby={"external-note-" + project.id}>

@@ -88,3 +88,20 @@ test("unknown case study provides a route back instead of a broken detail", () =
   expect(screen.getByRole("heading", { name: "Case study not found." })).toBeInTheDocument();
   expect(screen.getByRole("link", { name: /Back to projects/ })).toHaveAttribute("href", "/project");
 });
+
+test.each(projects.filter(project => !caseStudies[project.id]))("renders the $title overview and its available destinations", (project) => {
+  render(<MemoryRouter initialEntries={[`/project/${project.id}`]}><Routes><Route path="/project/:projectId" element={<CaseStudy />} /></Routes></MemoryRouter>);
+  expect(screen.getByRole("heading", { level: 1, name: project.title })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /Inspect source/ })).toHaveAttribute("href", project.ghLink);
+  expect(screen.getByRole("heading", { name: "The tools behind the interface." })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /Back to projects/ })).toHaveAttribute("href", "/project");
+  if (!project.demoLink) expect(screen.queryByRole("link", { name: /Explore live project/ })).not.toBeInTheDocument();
+});
+
+test("every project card has a native detail link and Shilla opens its overview", () => {
+  render(<MemoryRouter initialEntries={["/project"]}><Routes><Route path="/project" element={<Projects />} /><Route path="/project/:projectId" element={<CaseStudy />} /></Routes></MemoryRouter>);
+  projects.forEach(project => expect(screen.getByRole("link", { name: project.title, exact: true })).toHaveAttribute("href", `/project/${project.id}`));
+  fireEvent.click(screen.getByRole("link", { name: "Shilla Bakery", exact: true }));
+  expect(screen.getByRole("heading", { level: 1, name: "Shilla Bakery" })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /Inspect source/ })).toHaveAttribute("href", "https://github.com/dongyunkim96/Shilla-Bakery");
+});

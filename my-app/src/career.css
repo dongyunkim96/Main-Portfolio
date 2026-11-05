@@ -42,6 +42,35 @@
 .home-page .section-heading > p { font-size: 12px; max-width: 230px; }
 .project-grid { gap: 28px; }
 .work-card { border-radius: 10px; overflow: hidden; box-shadow: none; }
+.work-card { position: relative; isolation: isolate; }
+.card-title-link { color: inherit; text-decoration: none; }
+.card-title-link::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: 10px; cursor: pointer; }
+.card-title-link:focus-visible { outline: none; }
+.card-title-link:focus-visible::after { outline: 3px solid var(--accent); outline-offset: -3px; }
+.work-card .project-actions a { position: relative; z-index: 2; }
+.work-card:focus-within { border-color: var(--accent); }
+.work-card:has(.card-title-link:active) { border-color: var(--accent); }
+.overview-highlights { padding-left: 20px; margin: 24px 0; color: var(--strong-muted); font-size: 14px; line-height: 1.9; }
+.overview-highlights li { margin-bottom: 12px; padding-left: 6px; }
+.overview-highlights li::marker { color: var(--accent); }
+.overview-technologies { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+.overview-technologies li { border: 1px solid var(--line); border-radius: 6px; padding: 9px 14px; color: var(--strong-muted); font-size: 13px; }
+.overview-links { display: flex; gap: 28px; flex-wrap: wrap; }
+.overview-visual .product-preview { width: 100%; min-height: 300px; max-width: 900px; margin: auto; padding: 36px; }
+.overview-visual .product-preview h3 { font-size: 36px; }
+.overview-visual .chart-art { max-height: 200px; }
+@media (hover: hover) and (pointer: fine) {
+  .work-card:hover { border-color: var(--accent); box-shadow: 0 8px 28px #00000012; }
+  .work-card:hover .card-title-link { color: var(--accent); }
+  .work-card:hover .case-study-link svg { transform: translate(2px, -2px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .work-visual > img { transition: transform .3s ease; }
+  .case-study-link svg { transition: transform .2s ease; }
+  .work-card:hover .work-visual > img { transform: scale(1.025); }
+  .study-header { animation: career-enter .35s ease-out both; }
+}
+@media (prefers-reduced-motion: reduce) { .work-card, .work-card a { transition: none; } }
 .work-visual { aspect-ratio: 1.62; }
 .work-visual img { object-position: top; }
 .work-content .eyebrow { letter-spacing: .035em; font-size: 9px; }
