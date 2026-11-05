@@ -6,8 +6,10 @@ import Home from "./components/Home/Home";
 import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
 import "./theme.css";
+import "./career.css";
 
 const Projects = lazy(() => import("./components/Projects/Projects"));
+const CaseStudy = lazy(() => import("./components/Projects/CaseStudy"));
 const About = lazy(() => import("./components/About/About"));
 const Resume = lazy(() => import("./components/Resume/Resume"));
 const Contact = lazy(() => import("./components/Contact/Contact"));
@@ -28,6 +30,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/project" element={<Projects />} />
+          <Route path="/project/:projectId" element={<CaseStudy />} />
           <Route path="/projects" element={<Navigate to="/project" replace />} />
           <Route path="/about" element={<About />} />
           <Route path="/resume" element={<Resume />} />

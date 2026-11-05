@@ -1,38 +1,107 @@
 export const skillGroups = [
   {
-    title: "Languages & foundations",
-    description: "The building blocks behind responsive, component-based interfaces.",
-    skills: ["JavaScript", "TypeScript", "HTML", "CSS", "React"],
-    projects: ["STILLROOM", "Shilla Bakery", "WeatherWear", "JavaScript Practice", "CSS Experience"]
+    "title": "Frontend engineering",
+    "description": "Typed, reusable interfaces across React applications and SvelteKit workflows.",
+    "skills": [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Svelte / SvelteKit",
+      "HTML & CSS"
+    ],
+    "projects": [
+      "HealthCareKim",
+      "CONVENE",
+      "SPACEFIT",
+      "PALETTE"
+    ]
   },
   {
-    title: "UI & interaction",
-    description: "Styling systems, accessible primitives, motion, and data visualization.",
-    skills: ["Tailwind CSS", "Material UI", "Emotion", "Motion / Framer Motion", "Radix UI", "TradingView Lightweight Charts"],
-    projects: ["STILLROOM", "EasyMart", "CryptoPulse", "Shilla Bakery"]
+    "title": "Design & interaction",
+    "description": "Responsive systems, accessible controls, motion, and dimension-based editing.",
+    "skills": [
+      "Tailwind CSS",
+      "SVG",
+      "Motion",
+      "Anime.js",
+      "Radix UI"
+    ],
+    "projects": [
+      "SPACEFIT",
+      "STILLROOM",
+      "Shilla Bakery",
+      "PALETTE"
+    ]
   },
   {
-    title: "State & API integration",
-    description: "Routing, shared client state, cached requests, and validated responses.",
-    skills: ["React Context / useReducer", "React Router", "Redux Toolkit", "Zustand", "TanStack Query", "REST APIs", "Zod"],
-    projects: ["STILLROOM", "EasyMart", "CryptoPulse", "WeatherWear"]
+    "title": "State & API boundaries",
+    "description": "Shareable URL state, cached server data, and explicit client-state ownership.",
+    "skills": [
+      "TanStack Query",
+      "Zustand",
+      "React Context",
+      "React Router",
+      "tRPC",
+      "Zod"
+    ],
+    "projects": [
+      "HealthCareKim",
+      "SPACEFIT",
+      "PALETTE",
+      "WeatherWear"
+    ]
   },
   {
-    title: "Server & data",
-    description: "Application endpoints, shared caching, email delivery, and an alternative Worker backend.",
-    skills: ["Node.js", "Vercel Functions", "Upstash Redis", "Resend", "Cloudflare Workers", "SQLite / Durable Objects"],
-    projects: ["CryptoPulse", "WeatherWear", "Portfolio"]
+    "title": "Server & persistence",
+    "description": "Transactional writes, clinic isolation, reservation rules, and durable application records.",
+    "skills": [
+      "PostgreSQL",
+      "Neon",
+      "SQLite",
+      "Firebase",
+      "Vercel Functions",
+      "Upstash Redis"
+    ],
+    "projects": [
+      "HealthCareKim",
+      "CONVENE",
+      "SPACEFIT",
+      "CryptoPulse"
+    ]
   },
   {
-    title: "Testing & code quality",
-    description: "Unit tests, component interactions, end-to-end test tooling, and consistent source checks.",
-    skills: ["Vitest", "Jest", "React Testing Library", "Playwright", "ESLint", "Prettier"],
-    projects: ["STILLROOM", "Shilla Bakery", "CryptoPulse", "WeatherWear", "Portfolio"]
+    "title": "Testing & recovery",
+    "description": "Domain rules, component behavior, SQL boundaries, and browser workflow checks.",
+    "skills": [
+      "Vitest",
+      "Jest",
+      "React Testing Library",
+      "Playwright",
+      "PGlite",
+      "ESLint"
+    ],
+    "projects": [
+      "HealthCareKim",
+      "PALETTE",
+      "STILLROOM",
+      "Portfolio"
+    ]
   },
   {
-    title: "Build & delivery",
-    description: "Version control, local builds, and deployment workflows across projects.",
-    skills: ["Git", "GitHub", "npm", "Vite", "Vercel", "Wrangler"],
-    projects: ["STILLROOM", "Shilla Bakery", "CryptoPulse", "WeatherWear", "Portfolio"]
+    "title": "Build & delivery",
+    "description": "Version-controlled applications, documented setup, local builds, and hosted deployments.",
+    "skills": [
+      "Git",
+      "GitHub",
+      "npm",
+      "Vite",
+      "Vercel"
+    ],
+    "projects": [
+      "HealthCareKim",
+      "CONVENE",
+      "Shilla Bakery",
+      "PALETTE"
+    ]
   }
 ];

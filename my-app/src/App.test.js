@@ -1,11 +1,13 @@
 import React from "react";
 import { render, screen, within, fireEvent } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 import Projects from "./components/Projects/Projects";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact/Contact";
 import { projects } from "./data/projects";
+import CaseStudy from "./components/Projects/CaseStudy";
+import { caseStudies } from "./data/caseStudies";
 
 test("features HealthCareKim and preserves all existing projects", () => {
   render(<MemoryRouter><Projects /></MemoryRouter>);
@@ -60,13 +62,29 @@ test("contact failure retains the message and provides a direct email fallback",
 });
 
 
-test("homepage features HealthCareKim and retains the existing featured projects", () => {
+test("homepage features HealthCareKim and retains PALETTE after Shilla Bakery", () => {
   render(<MemoryRouter><Home /></MemoryRouter>);
-  const selectedWork = screen.getByRole("heading", { name: /Selected work/ }).closest("section");
+  const selectedWork = screen.getByRole("heading", { name: /The work behind the skills/ }).closest("section");
   const cards = within(selectedWork).getAllByRole("article");
   expect(cards.map(card => within(card).getByRole("heading", { level: 2 }).textContent)).toEqual(["HealthCareKim", "CONVENE", "SPACEFIT", "STILLROOM", "Shilla Bakery", "PALETTE", "WeatherWear", "CryptoPulse"]);
   expect(within(cards[0]).getByRole("link", { name: "View site — HealthCareKim" })).toHaveAttribute("href", "https://health-care-kim.vercel.app/");
   expect(within(cards[0]).getByRole("link", { name: "Source code — HealthCareKim" })).toHaveAttribute("href", "https://github.com/dongyunkim96/HealthCareKim");
   expect(within(cards[2]).getByRole("link", { name: "View site — SPACEFIT" })).toHaveAttribute("href", "https://space-fit-six.vercel.app/");
   expect(within(cards[2]).getByRole("link", { name: "Source code — SPACEFIT" })).toHaveAttribute("href", "https://github.com/dongyunkim96/SpaceFit");
+});
+
+test.each(Object.keys(caseStudies))("renders %s engineering evidence with valid project actions", (id) => {
+  const project = projects.find(item => item.id === id);
+  render(<MemoryRouter initialEntries={[`/project/${id}`]}><Routes><Route path="/project/:projectId" element={<CaseStudy />} /></Routes></MemoryRouter>);
+  expect(screen.getByRole("heading", { level: 1, name: project.title })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /Explore live project/ })).toHaveAttribute("href", project.demoLink);
+  expect(screen.getByRole("link", { name: /Inspect source/ })).toHaveAttribute("href", project.ghLink);
+  expect(screen.getByRole("heading", { name: "Scope & limitations" })).toBeInTheDocument();
+  expect(screen.getAllByText("Tradeoff")).toHaveLength(3);
+});
+
+test("unknown case study provides a route back instead of a broken detail", () => {
+  render(<MemoryRouter initialEntries={["/project/unknown"]}><Routes><Route path="/project/:projectId" element={<CaseStudy />} /></Routes></MemoryRouter>);
+  expect(screen.getByRole("heading", { name: "Case study not found." })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /Back to projects/ })).toHaveAttribute("href", "/project");
 });

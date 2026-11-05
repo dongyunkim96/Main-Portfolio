@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { caseStudies } from "../../data/caseStudies";
 import "./ProjectActions.css";
 import { FiArrowUpRight, FiGithub, FiCheck, FiSun, FiCloud, FiTrendingUp } from "react-icons/fi";
 
@@ -22,9 +24,10 @@ export default function ProjectCard({ project, index = 0, compact = false }) {
       <span className="work-index">{String(index + 1).padStart(2, "0")}</span>
     </div>
     <div className="work-content"><p className="eyebrow">{project.label}</p><h2>{project.title}</h2><p className="work-description">{project.description}</p>
-      {project.highlights && !compact && <ul className="work-highlights">{project.highlights.map(item => <li key={item}><FiCheck />{item}</li>)}</ul>}
+      {project.highlights && <ul className="work-highlights">{project.highlights.map(item => <li key={item}><FiCheck aria-hidden="true" />{item}</li>)}</ul>}
       <div className="tech-tags">{project.techStack.map(tech => <span key={tech}>{tech}</span>)}</div>
       <div className="project-actions">
+        {caseStudies[project.id] && <Link className="case-study-link" to={`/project/${project.id}`}>Engineering case study <FiArrowUpRight aria-hidden="true" /><span className="sr-only"> — {project.title}</span></Link>}
         <div className="project-action-buttons">
           {project.demoLink && (
             <a className="project-action project-action-primary" href={project.demoLink} target="_blank" rel="noopener noreferrer" aria-label={(project.demoLabel || "View site") + " — " + project.title} aria-describedby={"external-note-" + project.id}>

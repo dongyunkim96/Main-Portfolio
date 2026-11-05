@@ -14,7 +14,7 @@ export default function Navbar() {
           onClick={() => setOpen(false)}
           aria-label="Dongyun Kim home"
         >
-          dk<span>.</span>
+          <span className="brand-monogram">dk.</span><span className="brand-name">Dongyun Kim<small>Frontend & application engineering</small></span>
         </Link>
         <div id="main-nav" className={"nav-links " + (open ? "is-open" : "")}>
           {[

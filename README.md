@@ -1,8 +1,8 @@
 # Dongyun Kim — Front-End Developer Portfolio
 
-**Thoughtful design. Purposeful code.**
+**Considered interfaces. Reliable systems.**
 
-A personal portfolio showcasing responsive web applications, front-end engineering, and interface design with React and TypeScript.
+A personal portfolio connecting responsive interface craft with application state, APIs, SQL workflows, and documented engineering decisions. The homepage puts live projects before the detailed technology inventory.
 
 ### [Visit the portfolio ↗](https://dongyunkim.vercel.app/)
 
@@ -27,12 +27,18 @@ The complete archive contains **16 projects**, with filters for Applications, We
 
 ## Design and user experience
 
+- A project-led hero replaces the decorative code panel with an actual HealthCareKim interface and direct access to its engineering case study.
+- Four case studies explain context, contribution, architecture, decisions, tradeoffs, verification, limitations, and a guided demo workflow: HealthCareKim, CONVENE, SPACEFIT, and PALETTE.
+- Project cards expose implementation highlights and internal case-study links alongside the existing live-site and source actions.
+- The skills section connects current frontend, full-stack, interaction, and testing tools to inspectable project evidence. It uses no proficiency percentages or invented business-impact metrics.
+- A direct resume download, GitHub link, and contact paths are available from the hero.
+
 - Two coordinated themes: the original navy/mint dark mode and a soft ivory/forest-green light mode.
 - A keyboard-accessible header toggle remains available on desktop and mobile, saves the choice in `localStorage`, and restores it before React renders to avoid a theme flash. Dark is the default when no valid preference exists. Theme changes also synchronize across tabs; toggling still works when browser storage is unavailable.
 - Theme-aware navigation, cards, code preview, filters, skill tags, buttons, and contact fields.
 - Large **View site** and **View source** buttons on both homepage cards and the project archive.
 - Primary site buttons and outlined source buttons make the two destinations easy to distinguish. Projects without a demo feature a primary source button.
-- Button targets are at least **48px tall**, with generous spacing and automatic wrapping when the card is narrow.
+- Project actions use **44px targets on compact homepage cards** and **48px targets in the archive**, with automatic wrapping when the card is narrow.
 - Stationary cards, clear hover feedback, and visible keyboard focus make actions easier to select.
 - External actions open in a new tab, with a visible note and project-specific accessible names.
 - Mobile navigation, a skip-to-content link, reduced-motion support, and labeled contact fields.
@@ -60,16 +66,20 @@ The homepage and About page share six skill groups, with related projects listed
 
 | Area | Technologies used |
 | --- | --- |
-| Languages & foundations | JavaScript, TypeScript, HTML, CSS, React |
-| UI & interaction | Tailwind CSS, Material UI, Emotion, Motion / Framer Motion, Radix UI, TradingView Lightweight Charts |
-| State & API integration | React Context / useReducer, React Router, Redux Toolkit, Zustand, TanStack Query, REST APIs, Zod |
-| Server & data | Node.js, Vercel Functions, Upstash Redis, Resend, Cloudflare Workers, SQLite / Durable Objects |
-| Testing & code quality | Vitest, Jest, React Testing Library, Playwright, ESLint, Prettier |
-| Build & delivery | Git, GitHub, npm, Vite, Vercel, Wrangler |
+| Frontend engineering | React, TypeScript, Next.js, Svelte / SvelteKit, HTML & CSS |
+| Design & interaction | Tailwind CSS, SVG, Motion, Anime.js, Radix UI |
+| State & API boundaries | TanStack Query, Zustand, React Context, React Router, tRPC, Zod |
+| Server & persistence | PostgreSQL, Neon, SQLite, Firebase, Vercel Functions, Upstash Redis |
+| Testing & recovery | Vitest, Jest, React Testing Library, Playwright, PGlite, ESLint |
+| Build & delivery | Git, GitHub, npm, Vite, Vercel |
 
 Cloudflare Workers and SQLite / Durable Objects refer to CryptoPulse’s alternative backend; its current deployment uses Vercel Functions and Upstash Redis. STILLROOM contributes React Context/reducer state, deterministic recommendations, stock-aware bag logic, and Motion/Radix interactions. Its checkout is a frontend demo with no payment processing. Playwright appears in STILLROOM and Shilla Bakery’s end-to-end test tooling. Tool presence does not imply that every deployment or browser check has been independently verified.
 
 Skill content is maintained in `my-app/src/data/skills.js`; the shared presentation is in `my-app/src/components/Skills.js`. Resume-based About content is in `my-app/src/data/about.js`. Theme tokens are in `my-app/src/theme.css`, and the toggle is in `my-app/src/components/ThemeToggle.js`.
+
+Case-study narratives live in `my-app/src/data/caseStudies.js` and share `my-app/src/components/Projects/CaseStudy.js`. Hiring-focused layout rules live in `my-app/src/career.css`. [Design and verification notes](docs/employer-redesign.md) record the scope and actual checks.
+
+![Portfolio homepage in light mode](docs/screenshots/home-light.jpg)
 
 ## Run locally
 
@@ -92,13 +102,14 @@ npm run build
 node node_modules/react-scripts/scripts/test.js --watchAll=false --runInBand
 ```
 
-The tests cover featured project order, project filtering, mobile menu state, contact failure recovery, theme persistence, both toggle directions, invalid saved values, blocked storage, and cross-tab synchronization. Browser-based visual checks and actual email delivery require separate verification.
+The 15 tests cover featured project order, filtering, all four case-study pages and their actions/scope, unknown-case recovery, mobile menu state, contact failure recovery, theme persistence, both toggle directions, invalid saved values, blocked storage, and cross-tab synchronization. Actual email delivery requires separate verification. The redesign's local browser checks and their limits are recorded in `docs/employer-redesign.md`.
 
 ## Routes
 
 | Page | Route |
 | --- | --- |
 | Home | `/` |
+| Engineering case study | `/project/:projectId` for `healthcarekim`, `convene`, `spacefit`, and `palette` |
 | Projects | `/project` |
 | About | `/about` |
 | Resume | `/resume` |
