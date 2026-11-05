@@ -3,6 +3,7 @@ import convene from "../Assets/Convene.png";
 import spacefit from "../Assets/Spacefit.png";
 import stillroom from "../Assets/StillRoom.jpg";
 import shilla from "../Assets/ShillaBakery.png";
+import palette from "../Assets/Palette.jpg";
 import snacks from "../Assets/KoreanSnacks.png";
 import easyMart from "../Assets/EasyMart.png";
 import notes from "../Assets/StickyNotes.png";
@@ -52,6 +53,14 @@ export const projects = [
     highlights: ["Responsive brand experience", "Reusable component architecture"],
     techStack: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     ghLink: "https://github.com/dongyunkim96/Shilla-Bakery", demoLink: "https://shilla-bakery.vercel.app"
+  },
+  {
+    id: "palette", title: "PALETTE", category: "Web experiences", label: "GELATO CAFÉ · INTERACTIVE CATALOG",
+    image: palette, featured: true,
+    description: "A photo-led café experience with 60 gelato, drink, and bakery products. URL-based discovery, configurable prices, and a three-flavor gelato builder turn a compact editorial design into an interactive browsing journey.",
+    highlights: ["Searchable catalog & three-flavor palette builder", "Persistent favorites & reduced-motion interactions"],
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Motion", "Anime.js", "Vite"],
+    ghLink: "https://github.com/dongyunkim96/PaletteCafe", demoLink: "https://palette-cafe-chi.vercel.app/"
   },
   {
     id: "weatherwear", title: "WeatherWear", category: "Applications", label: "WEATHER & EVERYDAY DECISIONS",

@@ -19,10 +19,11 @@ The homepage and unfiltered project archive present these projects first, in thi
 | **03 · SPACEFIT** | A dimension-based 2D home layout planner with an interactive SVG editor, browser drafts, and Firebase account storage. | [View site](https://space-fit-six.vercel.app/) | [View source](https://github.com/dongyunkim96/SpaceFit) |
 | **04 · STILLROOM** | An editorial home fragrance storefront with scent recommendations, gift wrapping, and a complete demo checkout. | [View site](https://still-room-five.vercel.app/) | [View source](https://github.com/dongyunkim96/StillRoom) |
 | **05 · Shilla Bakery** | A responsive bakery brand experience built with React, TypeScript, and Tailwind CSS. | [View site](https://shilla-bakery.vercel.app) | [View source](https://github.com/dongyunkim96/Shilla-Bakery) |
-| **06 · WeatherWear** | A weather companion with outfit recommendations, commute layers, saved places, and trip packing lists. | [View site](https://weather-wear-coral.vercel.app) | [View source](https://github.com/dongyunkim96/WeatherWear) |
-| **07 · CryptoPulse** | A cryptocurrency research dashboard with charts, asset search, a watchlist, and cached market data. | [View site](https://cryptopulse-snowy.vercel.app) | [View source](https://github.com/dongyunkim96/CryptoPulse) |
+| **06 · PALETTE** | A photo-led café experience with 60 products, URL-based discovery, persistent favorites, and a three-flavor gelato builder. | [View site](https://palette-cafe-chi.vercel.app/) | [View source](https://github.com/dongyunkim96/PaletteCafe) |
+| **07 · WeatherWear** | A weather companion with outfit recommendations, commute layers, saved places, and trip packing lists. | [View site](https://weather-wear-coral.vercel.app) | [View source](https://github.com/dongyunkim96/WeatherWear) |
+| **08 · CryptoPulse** | A cryptocurrency research dashboard with charts, asset search, a watchlist, and cached market data. | [View site](https://cryptopulse-snowy.vercel.app) | [View source](https://github.com/dongyunkim96/CryptoPulse) |
 
-The complete archive contains **15 projects**, with filters for Applications, Web experiences, and Experiments. WeatherWear and CryptoPulse card visuals are interface illustrations; they do not display live forecast or market data.
+The complete archive contains **16 projects**, with filters for Applications, Web experiences, and Experiments. WeatherWear and CryptoPulse card visuals are interface illustrations; they do not display live forecast or market data.
 
 ## Design and user experience
 
