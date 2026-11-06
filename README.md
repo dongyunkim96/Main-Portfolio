@@ -20,15 +20,16 @@ The homepage and unfiltered project archive present these projects first, in thi
 | **04 · STILLROOM** | An editorial home fragrance storefront with scent recommendations, gift wrapping, and a complete demo checkout. | [View site](https://still-room-five.vercel.app/) | [View source](https://github.com/dongyunkim96/StillRoom) |
 | **05 · Shilla Bakery** | A responsive bakery brand experience built with React, TypeScript, and Tailwind CSS. | [View site](https://shilla-bakery.vercel.app) | [View source](https://github.com/dongyunkim96/Shilla-Bakery) |
 | **06 · PALETTE** | A photo-led café experience with 60 products, URL-based discovery, persistent favorites, and a three-flavor gelato builder. | [View site](https://palette-cafe-chi.vercel.app/) | [View source](https://github.com/dongyunkim96/PaletteCafe) |
-| **07 · WeatherWear** | A weather companion with outfit recommendations, commute layers, saved places, and trip packing lists. | [View site](https://weather-wear-coral.vercel.app) | [View source](https://github.com/dongyunkim96/WeatherWear) |
-| **08 · CryptoPulse** | A cryptocurrency research dashboard with charts, asset search, a watchlist, and cached market data. | [View site](https://cryptopulse-snowy.vercel.app) | [View source](https://github.com/dongyunkim96/CryptoPulse) |
+| **07 · FORM LAB** | A 116-product keyboard storefront with compatibility-aware builds, optional 3D, shared configurations, and local demo checkout. | [View site](https://form-lab-kappa.vercel.app/) | [View source](https://github.com/dongyunkim96/FormLab) |
+| **08 · WeatherWear** | A weather companion with outfit recommendations, commute layers, saved places, and trip packing lists. | [View site](https://weather-wear-coral.vercel.app) | [View source](https://github.com/dongyunkim96/WeatherWear) |
+| **09 · CryptoPulse** | A cryptocurrency research dashboard with charts, asset search, a watchlist, and cached market data. | [View site](https://cryptopulse-snowy.vercel.app) | [View source](https://github.com/dongyunkim96/CryptoPulse) |
 
-The complete archive contains **16 projects**, with filters for Applications, Web experiences, and Experiments. WeatherWear and CryptoPulse card visuals are interface illustrations; they do not display live forecast or market data.
+The complete archive contains **17 projects**, with filters for Applications, Web experiences, and Experiments. WeatherWear and CryptoPulse card visuals are interface illustrations; they do not display live forecast or market data.
 
 ## Design and user experience
 
 - A project-led hero replaces the decorative code panel with an actual HealthCareKim interface and direct access to its engineering case study.
-- All 16 project cards open internal description pages, with hover and keyboard-focus feedback. Four in-depth case studies explain context, contribution, architecture, decisions, tradeoffs, verification, limitations, and a guided demo workflow: HealthCareKim, CONVENE, SPACEFIT, and PALETTE. The other 12 pages provide project-specific introductions, implementation focus, technology, and source/demo links.
+- All 17 project cards open internal description pages, with hover and keyboard-focus feedback. Four in-depth case studies explain context, contribution, architecture, decisions, tradeoffs, verification, limitations, and a guided demo workflow: HealthCareKim, CONVENE, SPACEFIT, and PALETTE. The other 13 pages provide project-specific introductions, implementation focus, technology, and source/demo links.
 - Project cards expose implementation highlights and internal case-study links alongside the existing live-site and source actions.
 - The skills section connects current frontend, full-stack, interaction, and testing tools to inspectable project evidence. It uses no proficiency percentages or invented business-impact metrics.
 - A direct resume download, GitHub link, and contact paths are available from the hero.
@@ -102,14 +103,14 @@ npm run build
 node node_modules/react-scripts/scripts/test.js --watchAll=false --runInBand
 ```
 
-The 28 tests cover featured project order, filtering, all 16 project description pages, card-to-detail navigation, source-only projects, unknown-case recovery, mobile menu state, contact failure recovery, theme persistence, both toggle directions, invalid saved values, blocked storage, and cross-tab synchronization. Actual email delivery requires separate verification. The redesign's local browser checks and their limits are recorded in `docs/employer-redesign.md`.
+The 29 tests cover featured project order, filtering, all 17 project description pages, card-to-detail navigation, source-only projects, unknown-case recovery, mobile menu state, contact failure recovery, theme persistence, both toggle directions, invalid saved values, blocked storage, and cross-tab synchronization. Actual email delivery requires separate verification. The redesign's local browser checks and their limits are recorded in `docs/employer-redesign.md`.
 
 ## Routes
 
 | Page | Route |
 | --- | --- |
 | Home | `/` |
-| Project description | `/project/:projectId` for all 16 catalog IDs; four include in-depth engineering case studies |
+| Project description | `/project/:projectId` for all 17 catalog IDs; four include in-depth engineering case studies |
 | Projects | `/project` |
 | About | `/about` |
 | Resume | `/resume` |

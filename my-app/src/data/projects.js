@@ -1,3 +1,4 @@
+import formlab from "../Assets/FormLab.webp";
 import healthcarekim from "../Assets/HealthCareKim.png";
 import convene from "../Assets/Convene.png";
 import spacefit from "../Assets/Spacefit.png";
@@ -61,6 +62,14 @@ export const projects = [
     highlights: ["Searchable catalog & three-flavor palette builder", "Persistent favorites & reduced-motion interactions"],
     techStack: ["React", "TypeScript", "Tailwind CSS", "Motion", "Anime.js", "Vite"],
     ghLink: "https://github.com/dongyunkim96/PaletteCafe", demoLink: "https://palette-cafe-chi.vercel.app/"
+  },
+  {
+    id: "formlab", title: "FORM LAB", category: "Web experiences", label: "KEYBOARD CONFIGURATOR · DEMO COMMERCE",
+    image: formlab, featured: true,
+    description: "A mechanical keyboard storefront connecting 116 products with a compatibility-aware custom builder. Configure a 65%, 75%, or TKL keyboard, explore optional 3D previews, share a build, and complete a browser-local demo order without payment.",
+    highlights: ["Typed compatibility checks & transparent build pricing", "Shareable configurations, persistent bag & demo checkout"],
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Zustand", "React Three Fiber", "Motion", "Zod", "Vite"],
+    ghLink: "https://github.com/dongyunkim96/FormLab", demoLink: "https://form-lab-kappa.vercel.app/"
   },
   {
     id: "weatherwear", title: "WeatherWear", category: "Applications", label: "WEATHER & EVERYDAY DECISIONS",

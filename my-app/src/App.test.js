@@ -12,10 +12,10 @@ import { caseStudies } from "./data/caseStudies";
 test("features HealthCareKim and preserves all existing projects", () => {
   render(<MemoryRouter><Projects /></MemoryRouter>);
   const cards = screen.getAllByRole("article");
-  expect(cards).toHaveLength(16);
+  expect(cards).toHaveLength(17);
   expect(within(cards[0]).getByRole("link", { name: "View site — HealthCareKim" })).toHaveAttribute("href", "https://health-care-kim.vercel.app/");
   expect(within(cards[0]).getByRole("link", { name: "Source code — HealthCareKim" })).toHaveAttribute("href", "https://github.com/dongyunkim96/HealthCareKim");
-  expect(cards.slice(0, 8).map(card => within(card).getByRole("heading", { level: 2 }).textContent)).toEqual(["HealthCareKim", "CONVENE", "SPACEFIT", "STILLROOM", "Shilla Bakery", "PALETTE", "WeatherWear", "CryptoPulse"]);
+  expect(cards.slice(0, 9).map(card => within(card).getByRole("heading", { level: 2 }).textContent)).toEqual(["HealthCareKim", "CONVENE", "SPACEFIT", "STILLROOM", "Shilla Bakery", "PALETTE", "FORM LAB", "WeatherWear", "CryptoPulse"]);
   expect(within(cards[1]).getByRole("link", { name: "View site — CONVENE" })).toHaveAttribute("href", "https://convene-coral-six.vercel.app");
   expect(within(cards[1]).getByRole("link", { name: "Source code — CONVENE" })).toHaveAttribute("href", "https://github.com/dongyunkim96/Convene");
   expect(within(cards[2]).getByRole("link", { name: "Source code — SPACEFIT" })).toHaveAttribute("href", "https://github.com/dongyunkim96/SpaceFit");
@@ -23,6 +23,8 @@ test("features HealthCareKim and preserves all existing projects", () => {
   expect(within(cards[3]).getByRole("link", { name: "Source code — STILLROOM" })).toHaveAttribute("href", "https://github.com/dongyunkim96/StillRoom");
   expect(within(cards[5]).getByRole("link", { name: "View site — PALETTE" })).toHaveAttribute("href", "https://palette-cafe-chi.vercel.app/");
   expect(within(cards[5]).getByRole("link", { name: "Source code — PALETTE" })).toHaveAttribute("href", "https://github.com/dongyunkim96/PaletteCafe");
+  expect(within(cards[6]).getByRole("link", { name: "View site — FORM LAB" })).toHaveAttribute("href", "https://form-lab-kappa.vercel.app/");
+  expect(within(cards[6]).getByRole("link", { name: "Source code — FORM LAB" })).toHaveAttribute("href", "https://github.com/dongyunkim96/FormLab");
   projects.forEach(project => expect(project.ghLink).toMatch(/^https:\/\/github\.com\//));
 });
 
@@ -32,11 +34,12 @@ test("filters projects and restores the complete ordered collection", () => {
   expect(screen.getAllByRole("article")).toHaveLength(3);
   expect(screen.queryByRole("heading", { name: "Shilla Bakery" })).not.toBeInTheDocument();
   fireEvent.click(screen.getByRole("button", { name: "Web experiences" }));
-  expect(screen.getAllByRole("article")).toHaveLength(3);
+  expect(screen.getAllByRole("article")).toHaveLength(4);
+  expect(screen.getByRole("heading", { name: "FORM LAB" })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "PALETTE" })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "STILLROOM" })).toBeInTheDocument();
   fireEvent.click(screen.getByRole("button", { name: "All projects" }));
-  expect(screen.getAllByRole("article")).toHaveLength(16);
+  expect(screen.getAllByRole("article")).toHaveLength(17);
 });
 
 test("mobile navigation reports its state and closes after choosing a page", () => {
@@ -66,7 +69,7 @@ test("homepage features HealthCareKim and retains PALETTE after Shilla Bakery", 
   render(<MemoryRouter><Home /></MemoryRouter>);
   const selectedWork = screen.getByRole("heading", { name: /The work behind the skills/ }).closest("section");
   const cards = within(selectedWork).getAllByRole("article");
-  expect(cards.map(card => within(card).getByRole("heading", { level: 2 }).textContent)).toEqual(["HealthCareKim", "CONVENE", "SPACEFIT", "STILLROOM", "Shilla Bakery", "PALETTE", "WeatherWear", "CryptoPulse"]);
+  expect(cards.map(card => within(card).getByRole("heading", { level: 2 }).textContent)).toEqual(["HealthCareKim", "CONVENE", "SPACEFIT", "STILLROOM", "Shilla Bakery", "PALETTE", "FORM LAB", "WeatherWear", "CryptoPulse"]);
   expect(within(cards[0]).getByRole("link", { name: "View site — HealthCareKim" })).toHaveAttribute("href", "https://health-care-kim.vercel.app/");
   expect(within(cards[0]).getByRole("link", { name: "Source code — HealthCareKim" })).toHaveAttribute("href", "https://github.com/dongyunkim96/HealthCareKim");
   expect(within(cards[2]).getByRole("link", { name: "View site — SPACEFIT" })).toHaveAttribute("href", "https://space-fit-six.vercel.app/");

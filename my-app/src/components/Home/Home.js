@@ -32,7 +32,7 @@ export default function Home() {
       <div><dt>Verification</dt><dd>Vitest · Playwright · SQL tests</dd></div>
     </dl>
     <section id="selected-work" className="selected-section" aria-labelledby="selected-title">
-      <div className="section-heading"><div><p className="section-kicker">Selected work / 01–08</p><h2 id="selected-title">The work behind the skills.</h2></div><Link className="text-link" to="/project">All {projects.length} projects <FiArrowUpRight aria-hidden="true" /></Link></div>
+      <div className="section-heading"><div><p className="section-kicker">Selected work / 01–{String(projects.filter(project => project.featured).length).padStart(2, "0")}</p><h2 id="selected-title">The work behind the skills.</h2></div><Link className="text-link" to="/project">All {projects.length} projects <FiArrowUpRight aria-hidden="true" /></Link></div>
       <p className="section-deck">Full-stack workflows, interactive tools, and carefully built brand experiences. Open a live demo, inspect the source, or read the engineering decisions.</p>
       <div className="project-grid home-grid">{projects.filter(project => project.featured).map((project, index) => <ProjectCard key={project.id} project={project} index={index} compact />)}</div>
     </section>
