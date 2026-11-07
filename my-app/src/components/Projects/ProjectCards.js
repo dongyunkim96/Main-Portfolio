@@ -20,7 +20,7 @@ export function ProductPreview({ type }) {
 export default function ProjectCard({ project, index = 0, compact = false }) {
   return <article className={"work-card " + (compact ? "compact-card" : "")}>
     <div className={"work-visual visual-" + project.id}>
-      {project.preview ? <ProductPreview type={project.preview} /> : <img src={project.image} alt={project.title + " application screenshot"} loading="lazy" decoding="async" width="900" height="560" />}
+      {project.preview ? <ProductPreview type={project.preview} /> : <img src={project.image} alt={project.title + " " + (project.visualLabel || "application screenshot")} loading="lazy" decoding="async" width="900" height="560" />}
       <span className="work-index">{String(index + 1).padStart(2, "0")}</span>
     </div>
     <div className="work-content"><p className="eyebrow">{project.label}</p><h2><Link className="card-title-link" to={`/project/${project.id}`}>{project.title}</Link></h2><p className="work-description">{project.description}</p>

@@ -23,13 +23,14 @@ The homepage and unfiltered project archive present these projects first, in thi
 | **07 · FORM LAB** | A 116-product keyboard storefront with compatibility-aware builds, optional 3D, shared configurations, and local demo checkout. | [View site](https://form-lab-kappa.vercel.app/) | [View source](https://github.com/dongyunkim96/FormLab) |
 | **08 · WeatherWear** | A weather companion with outfit recommendations, commute layers, saved places, and trip packing lists. | [View site](https://weather-wear-coral.vercel.app) | [View source](https://github.com/dongyunkim96/WeatherWear) |
 | **09 · CryptoPulse** | A cryptocurrency research dashboard with charts, asset search, a watchlist, and cached market data. | [View site](https://cryptopulse-snowy.vercel.app) | [View source](https://github.com/dongyunkim96/CryptoPulse) |
+| **10 · AFC Lab** | A bilingual transit fare collection simulator with 24 gates, immutable approval logic, device fault injection, diagnostic logs, and recovery workflows. | [View site](https://afc-lab-dongyun.dongyunkim96.chatgpt.site/) | [View source](https://github.com/dongyunkim96/AFCLab) |
 
-The complete archive contains **17 projects**, with filters for Applications, Web experiences, and Experiments. WeatherWear and CryptoPulse card visuals are interface illustrations; they do not display live forecast or market data.
+The complete archive contains **18 projects**, with filters for Applications, Web experiences, and Experiments. WeatherWear, CryptoPulse, and AFC Lab card visuals are interface illustrations. They do not display live forecast, market, or operational data.
 
 ## Design and user experience
 
 - A project-led hero replaces the decorative code panel with an actual HealthCareKim interface and direct access to its engineering case study.
-- All 17 project cards open internal description pages, with hover and keyboard-focus feedback. Four in-depth case studies explain context, contribution, architecture, decisions, tradeoffs, verification, limitations, and a guided demo workflow: HealthCareKim, CONVENE, SPACEFIT, and PALETTE. The other 13 pages provide project-specific introductions, implementation focus, technology, and source/demo links.
+- All 18 project cards open internal description pages, with hover and keyboard-focus feedback. Four in-depth case studies explain context, contribution, architecture, decisions, tradeoffs, verification, limitations, and a guided demo workflow: HealthCareKim, CONVENE, SPACEFIT, and PALETTE. The other 14 pages provide project-specific introductions, implementation focus, technology, and source/demo links.
 - Project cards expose implementation highlights and internal case-study links alongside the existing live-site and source actions.
 - The skills section connects current frontend, full-stack, interaction, and testing tools to inspectable project evidence. It uses no proficiency percentages or invented business-impact metrics.
 - A direct resume download, GitHub link, and contact paths are available from the hero.

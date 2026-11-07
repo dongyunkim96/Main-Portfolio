@@ -13,8 +13,8 @@ export default function ProjectOverview({ project }) {
       <a className="text-link" href={project.ghLink} target="_blank" rel="noreferrer"><FiGithub aria-hidden="true" /> Inspect source<span className="sr-only"> (opens in a new tab)</span></a>
     </div></header>
     <figure className={`study-visual overview-visual visual-${project.id}`}>
-      {project.preview ? <ProductPreview type={project.preview} /> : <img src={project.image} alt={`${project.title} application interface`} width="900" height="560" />}
-      <figcaption>{project.preview ? "Interface illustration" : "Application screenshot"} · {project.title}</figcaption>
+      {project.preview ? <ProductPreview type={project.preview} /> : <img src={project.image} alt={`${project.title} ${project.visualLabel || "application interface"}`} width="900" height="560" />}
+      <figcaption>{project.preview ? "Interface illustration" : project.visualLabel || "Application screenshot"} · {project.title}</figcaption>
     </figure>
     <div className="study-layout"><nav className="study-nav" aria-label="Project sections"><span>On this page</span><a href="#overview">Project focus</a><a href="#technology">Technology</a><a href="#explore">Explore the project</a></nav><div className="study-body">
       <section id="overview"><p className="section-kicker">01 / Project focus</p><h2>{project.label.split(" · ")[0].toLowerCase().replace(/^./, char => char.toUpperCase())}.</h2><p>{overview?.context || project.description}</p>

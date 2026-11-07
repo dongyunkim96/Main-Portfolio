@@ -1,4 +1,5 @@
 import formlab from "../Assets/FormLab.webp";
+import afclab from "../Assets/AFCLab.svg";
 import healthcarekim from "../Assets/HealthCareKim.png";
 import convene from "../Assets/Convene.png";
 import spacefit from "../Assets/Spacefit.png";
@@ -86,6 +87,14 @@ export const projects = [
     highlights: ["Interactive charts & persistent watchlist", "Cached CoinGecko data with explicit data states"],
     techStack: ["React", "TypeScript", "Zustand", "Upstash Redis"],
     ghLink: "https://github.com/dongyunkim96/CryptoPulse", demoLink: "https://cryptopulse-snowy.vercel.app"
+  },
+  {
+    id: "afclab", title: "AFC Lab", category: "Applications", label: "TRANSIT OPERATIONS · INTERACTIVE SIMULATOR",
+    image: afclab, visualLabel: "Interface illustration", featured: true,
+    description: "A bilingual Automatic Fare Collection simulator with 24 fare gates across six zones. Explore card approvals, balance protection, device faults, and log-driven recovery through a browser-local transit operations console.",
+    highlights: ["Immutable fare logic & fault recovery across 24 devices", "Korean/English logs, CSV export & independent validation scenarios"],
+    techStack: ["React", "TypeScript", "Vinext", "Vite", "Tailwind CSS", "Node.js"],
+    ghLink: "https://github.com/dongyunkim96/AFCLab", demoLink: "https://afc-lab-dongyun.dongyunkim96.chatgpt.site/"
   },
   { id: "snacks", title: "Korean Snacks Shop", category: "Applications", label: "TEAM PROJECT · E-COMMERCE", image: snacks,
     description: "A collaborative shopping experience for discovering Korean snacks, with product browsing, API integration, and a shopping cart.",
